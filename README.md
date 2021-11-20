@@ -5,7 +5,7 @@ The package, for now, only contains a toy node that continously publishes a cons
 
 ## Installation
 Make sure you have *docker* installed. Then to build and run the docker container: </br>
-`chmod +x ./run_docker && ./run_docker` </br>
+`chmod +x ./run_ros.sh && ./run_ros.sh` </br>
 
 ## Execution
 Once the container is running, to launch an interactive shell inside it run: </br>
