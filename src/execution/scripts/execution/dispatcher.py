@@ -33,33 +33,62 @@
 #
 # Revision $Id$
 
-## Simple talker demo that published std_msgs/Strings messages
-## to the 'chatter' topic
-
 import rospy
 import numpy as np
-from numpy import random
-from std_msgs.msg import String, Float32
+from execution import topics
+from std_msgs.msg import String, Float32, Bool
 
-ACTUATOR_TOPIC = 'unknown_topic' # TODO: find every drivers' topic
+class Dispatcher():
+    def __init__(self):
+        # Initialize Dispatcher Node
+        rospy.init_node('dispatcher', anonymous=True)
 
-# TODO
-def pid_step():
-    return 1.0
+        # Steering wheel
+        self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
+        self.steer_pub = rospy.Publisher(
+                topics.STEER_DESIRED_WHEEL_ANGLE,
+                Float32
+                )
+        # self.steer_current_angle_sub = ...
 
-def dispatcher():
-    pub = rospy.Publisher(ACTUATOR_TOPIC, Float32)
-    rospy.init_node('dispatcher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+        # Brake
+        self.brake_homing_pub = rospy.Publisher(topics.BRAKE_HOMING, Bool)
+        self.brake_engage_pub = rospy.Publisher(topics.BRAKE_ENGAGE, Bool)
+        self.brake_des_percent_pub = rospy.Publisher(
+                topics.BRAKE_DESIRED_PERCENT,
+                Float32
+                )
 
-    while not rospy.is_shutdown():
-        signal = pid_step()
-        rospy.loginfo(signal)
-        pub.publish(signal)
-        rate.sleep()
+        # Clutch
+        self.clutch_enable_pub = rospy.Publisher(topics.CLUTCH_ENABLE, Bool)
+        self.clutch_engage_pub = rospy.Publisher(topics.CLUTCH_ENGAGE, Bool)
+
+        # PPS (Pedal Position Sensor)
+        self.brake_engage_pub = rospy.Publisher(topics.PPS, Float32)
+
+        # Initialize actuators states
+        self.init_actuators()
+
+    def init_actuators(self):
+        pass
+    
+    def spin(self):
+        rate = rospy.Rate(10) # 100hz
+        while not rospy.is_shutdown():
+            signal = np.random.rand()
+            rospy.loginfo(signal)
+
+            # actuate
+
+            rate.sleep()
+
+
+def main():
+    dispatcher = Dispatcher()
+    dispatcher.spin()
 
 if __name__ == '__main__':
     try:
-        dispatcher()
+        main()
     except rospy.ROSInterruptException:
         pass
