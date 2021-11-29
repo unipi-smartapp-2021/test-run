@@ -1,14 +1,21 @@
-FROM ros:noetic
+ARG CARLA_VERSION=0.9.13
+FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}
 SHELL ["/bin/bash", "-c"]
-ARG WORKSPACE=/home/ws
+USER $USERNAME
+ARG WORKSPACE=$HOME/actuators_ws
 ENV WORKSPACE $WORKSPACE
-RUN apt-get -y update && apt-get -y install vim
+ARG ROS_VERSION=noetic
+ARG SIM_WS=$HOME/etdv_simulator_ws
+
 RUN mkdir -p $WORKSPACE
 ADD src $WORKSPACE/src
 WORKDIR $WORKSPACE 
 
-RUN source /ros_entrypoint.sh && catkin_make
-RUN source devel/setup.sh
-RUN echo "source /ros_entrypoint.sh" >> /root/.bashrc
-RUN echo "source $WORKSPACE/devel/setup.bash" >> /root/.bashrc
-CMD ["roscore"]
+RUN source /opt/ros/$ROS_VERSION/setup.bash && \
+    source $HOME/carla-ros-bridge/catkin_ws/devel/setup.bash && \
+    source $SIM_WS/devel/setup.bash && \
+    catkin_make
+RUN echo "source $WORKSPACE/devel/setup.bash" >> ~/.bashrc
+# CMD ["/bin/bash", "-ic", "roscore"]
+CMD ["bash", "-ic", "$HOME/run_all.sh ${CARLA_RENDER_OPTS} && tail -f /dev/null"]
+

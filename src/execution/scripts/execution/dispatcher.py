@@ -1,47 +1,20 @@
 #!/usr/bin/env python
-# Software License Agreement (BSD License)
-#
-# Copyright (c) 2008, Willow Garage, Inc.
-# All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions
-# are met:
-#
-#  * Redistributions of source code must retain the above copyright
-#    notice, this list of conditions and the following disclaimer.
-#  * Redistributions in binary form must reproduce the above
-#    copyright notice, this list of conditions and the following
-#    disclaimer in the documentation and/or other materials provided
-#    with the distribution.
-#  * Neither the name of Willow Garage, Inc. nor the names of its
-#    contributors may be used to endorse or promote products derived
-#    from this software without specific prior written permission.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-# COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-# ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-# POSSIBILITY OF SUCH DAMAGE.
-#
-# Revision $Id$
 
 import rospy
 import numpy as np
+import carla_msgs.msg
 from execution import topics
+from execution.AccelerationController import AccelerationController
 from std_msgs.msg import String, Float32, Bool
+from geometry_msgs.msg import Accel
+
 
 class Dispatcher():
     def __init__(self):
         # Initialize Dispatcher Node
         rospy.init_node('dispatcher', anonymous=True)
+
+        self.acceleration_control = AccelerationController(0.0, Kp=6, Kd=0)
 
         # Steering wheel
         self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
@@ -64,22 +37,47 @@ class Dispatcher():
         self.clutch_engage_pub = rospy.Publisher(topics.CLUTCH_ENGAGE, Bool)
 
         # PPS (Pedal Position Sensor)
-        self.brake_engage_pub = rospy.Publisher(topics.PPS, Float32)
+        self.pps_pub = rospy.Publisher(topics.PPS, Float32)
+
+        self.pps_sub = rospy.Subscriber(topics.PPS, Float32, lambda data: self.log_msg(data))
+
+        # CARLA vehicle control commands
+        self.cmd_pub = rospy.Publisher('/carla/ego_vehicle/vehicle_control_cmd', carla_msgs.msg.CarlaEgoVehicleControl)
+        # CARLA vehicle information
+        self.status_sub = rospy.Subscriber('/carla/ego_vehicle/vehicle_status', carla_msgs.msg.CarlaEgoVehicleStatus, lambda data: self.update_throttle(data))
+        self.info_sub = rospy.Subscriber('/carla/ego_vehicle/vehicle_info', carla_msgs.msg.CarlaEgoVehicleInfo, lambda data: self.log_msg(data))
 
         # Initialize actuators states
         self.init_actuators()
 
+    def log_msg(self, data):
+        rospy.loginfo(data)
+
     def init_actuators(self):
         pass
+
+    def update_throttle(self, data):
+        rospy.loginfo(data)
+        # Get target acceleration
+        target_acc = self.get_target_acceleration()
+
+        # get current linear (forward) acceleration
+        current = data.acceleration.linear
+        # compute acceleration modulus
+        current = np.sqrt(current.x**2 + current.y**2)
+
+        # Vehicle Control message
+        cmd = carla_msgs.msg.CarlaEgoVehicleControl()
+        cmd.throttle = self.acceleration_control.pid_step(current, target_acc)
+        self.cmd_pub.publish(cmd)
+
+    def get_target_acceleration(self):
+        # target acceleration stub
+        return 2.0 # m/s^2
     
     def spin(self):
-        rate = rospy.Rate(10) # 100hz
+        rate = rospy.Rate(100) # 100hz
         while not rospy.is_shutdown():
-            signal = np.random.rand()
-            rospy.loginfo(signal)
-
-            # actuate
-
             rate.sleep()
 
 
