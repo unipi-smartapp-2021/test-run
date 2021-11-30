@@ -5,6 +5,7 @@ import numpy as np
 import carla_msgs.msg
 from execution import topics
 from execution.PIDController import PIDController
+# from planning.msg import STP_Data
 from std_msgs.msg import String, Float32, Bool
 from geometry_msgs.msg import Accel
 
@@ -14,7 +15,9 @@ class Dispatcher():
         # Initialize Dispatcher Node
         rospy.init_node('dispatcher', anonymous=True)
 
-        self.acceleration_control = PIDController(0.0, Kp=6, Kd=0)
+        self.current_velocity = 0.0
+        self.target_velocity = 0.0
+        self.velocity_control = PIDController(self.current_velocity, Kp=6, Kd=0)
 
         # Steering wheel
         self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
@@ -42,10 +45,17 @@ class Dispatcher():
         self.pps_sub = rospy.Subscriber(topics.PPS, Float32, lambda data: self.log_msg(data))
 
         # CARLA vehicle control commands
-        self.cmd_pub = rospy.Publisher('/carla/ego_vehicle/vehicle_control_cmd', carla_msgs.msg.CarlaEgoVehicleControl)
+        self.cmd_pub = rospy.Publisher('/carla/ego_vehicle/vehicle_control_cmd',
+                carla_msgs.msg.CarlaEgoVehicleControl)
         # CARLA vehicle information
-        self.status_sub = rospy.Subscriber('/carla/ego_vehicle/vehicle_status', carla_msgs.msg.CarlaEgoVehicleStatus, lambda data: self.update_throttle(data))
-        self.info_sub = rospy.Subscriber('/carla/ego_vehicle/vehicle_info', carla_msgs.msg.CarlaEgoVehicleInfo, lambda data: self.log_msg(data))
+        self.status_sub = rospy.Subscriber('/carla/ego_vehicle/vehicle_status',
+                carla_msgs.msg.CarlaEgoVehicleStatus, lambda data: self.update_status(data))
+        self.info_sub = rospy.Subscriber('/carla/ego_vehicle/vehicle_info',
+                carla_msgs.msg.CarlaEgoVehicleInfo, lambda data: self.log_msg(data))
+
+        # STP stub subscription
+        self.stp_sub = rospy.Subscriber('/planning/stp_data', STP_Data,
+                lambda data: self.update_throttle(data))
 
         # Initialize actuators states
         self.init_actuators()
@@ -56,19 +66,22 @@ class Dispatcher():
     def init_actuators(self):
         pass
 
-    def update_throttle(self, data):
+    def update_status(self, data):
         rospy.loginfo(data)
-        # Get target acceleration
-        target_acc = self.get_target_acceleration()
+        # get current linear (forward) velocity
+        self.current_velocity = data.velocity
 
-        # get current linear (forward) acceleration
-        current = data.acceleration.linear
-        # compute acceleration modulus
-        current = np.sqrt(current.x**2 + current.y**2)
+
+    def update_throttle(self, data):
+        # Get target velocity
+        self.target_velocity = self.current_velocity + data.dv
+
+        # get current linear (forward) velocity
+        current = self.current_velocity
 
         # Vehicle Control message
         cmd = carla_msgs.msg.CarlaEgoVehicleControl()
-        cmd.throttle = self.acceleration_control.pid_step(current, target_acc)
+        cmd.throttle = self.velocity_control.pid_step(current, self.target_velocity)
         self.cmd_pub.publish(cmd)
 
     def get_target_acceleration(self):
