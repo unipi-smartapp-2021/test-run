@@ -1,4 +1,4 @@
-ARG CARLA_VERSION=0.9.13
+ARG CARLA_VERSION=0.9.11
 FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}
 SHELL ["/bin/bash", "-c"]
 USER $USERNAME

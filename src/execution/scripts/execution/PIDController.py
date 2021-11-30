@@ -5,15 +5,15 @@ from execution import topics
 from std_msgs.msg import String, Float32, Bool
 
 # Generalize as PID controller
-class AccelerationController():
-    def __init__(self, acceleration=0.0, Kp = 4.0, Ki = 3.0, Kd = 1.5):
-        self.acceleration = acceleration # TODO: subscribe to acc topic
+class PIDController():
+    def __init__(self, value=0.0, Kp = 4.0, Ki = 3.0, Kd = 1.5):
+        self.value = value
         self.Kp = Kp
         self.Ki = Ki
         self.Kd = Kd
         self.error = np.zeros(3)
         # TODO: make this of fixed size by truncating it at each step
-        self.outputs = np.array([self.get_acceleration()])
+        self.outputs = np.array([self.get_value()])
         self.last_time = None
         
     def tick(self):
@@ -22,11 +22,11 @@ class AccelerationController():
     def update(self, acceleration):
         pass
 
-    def get_acceleration(self):
-        return self.acceleration
+    def get_value(self):
+        return self.value
 
     def _error(self, target):
-        return target - self.acceleration
+        return target - self.value
 
     def pid_step(self, current, target):
         """ Takes as input a target state and the actual state.
@@ -48,7 +48,6 @@ class AccelerationController():
 
         self.last_time = rospy.get_time()
 
-        # dt = 1.0 # TODO: compute
         A0 = self.Kp + self.Ki*dt + self.Kd/dt
         A1 = -self.Kp - 2*self.Kd/dt
         A2 = self.Kd/dt
@@ -83,6 +82,6 @@ class AccelerationController():
         Produces a new state
         """
         self.update(output)
-        return self.get_acceleration()
+        return self.get_value()
 
 

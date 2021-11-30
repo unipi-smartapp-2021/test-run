@@ -4,7 +4,7 @@ import rospy
 import numpy as np
 import carla_msgs.msg
 from execution import topics
-from execution.AccelerationController import AccelerationController
+from execution.PIDController import PIDController
 from std_msgs.msg import String, Float32, Bool
 from geometry_msgs.msg import Accel
 
@@ -14,7 +14,7 @@ class Dispatcher():
         # Initialize Dispatcher Node
         rospy.init_node('dispatcher', anonymous=True)
 
-        self.acceleration_control = AccelerationController(0.0, Kp=6, Kd=0)
+        self.acceleration_control = PIDController(0.0, Kp=6, Kd=0)
 
         # Steering wheel
         self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
