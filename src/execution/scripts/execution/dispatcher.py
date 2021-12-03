@@ -25,7 +25,9 @@ class Dispatcher():
         self.velocity_control = PIDController(self.current_velocity,
                 Kp=6, Kd=0, minv=0, maxv=1)
         self.steering_control = PIDController(self.current_zorient,
-                Kp=1.0, Ki=1.5, Kd=1.0, minv=-0.9, maxv=0.9)
+                Kp=1.5, Ki=1.2, Kd=1.0, minv=-0.9, maxv=0.9)
+        self.braking_control = PIDController(self.current_zorient,
+                Kp=3.0, Ki=1.5, Kd=1.0, minv=0.0, maxv=1.0)
 
         # Steering wheel
         self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
@@ -85,7 +87,8 @@ class Dispatcher():
     def update_control(self, data):
         # Get target velocity
         self.target_velocity = self.current_velocity + data.dv
-        self.target_zorient = data.psi - np.pi/2.0
+        # self.target_zorient = data.psi - np.pi/2.0
+        self.target_zorient = 0.0
         rospy.loginfo('current z: {:.3f}\t target z: {:.3}\t psi: {:.3}'.format(self.current_zorient, self.target_zorient, data.psi))
 
         # Vehicle Control message
@@ -95,6 +98,10 @@ class Dispatcher():
         cmd.throttle = self.velocity_control.pid_step(self.current_velocity, self.target_velocity)
         # Control steering
         cmd.steer = -self.steering_control.pid_step(self.current_zorient, self.target_zorient)
+        # Control braking (if not activating the throttle)
+        if data.dv < 0 and cmd.throttle <= 1e-2:
+            cmd.brake = self.steering_control.pid_step(self.current_velocity, self.target_velocity)
+
 
         self.cmd_pub.publish(cmd)
 
