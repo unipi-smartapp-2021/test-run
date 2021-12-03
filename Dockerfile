@@ -3,20 +3,10 @@ FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-amd-vulk
 USER $USERNAME
 SHELL ["/bin/bash", "-ic"]
 
-# make execution workspace
-ENV EXECUTION_WS $HOME/actuators_ws
-RUN mkdir -p $EXECUTION_WS
-COPY ./src $EXECUTION_WS/src
-
 # make planning workspace
 ENV PLANNING_WS $HOME/planning_ws
 RUN mkdir -p $PLANNING_WS/src
 COPY ./planning $PLANNING_WS/src/
-
-# build execution package
-WORKDIR $EXECUTION_WS
-RUN catkin_make
-RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
 
 # build planning package
 WORKDIR $PLANNING_WS
@@ -26,7 +16,18 @@ RUN catkin_make && \
     rosdep install -y planning
 RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
 
-WORKDIR $HOME
 COPY ./scripts/run_planner.sh $HOME/run_planner.sh
+
+# make execution workspace
+ENV EXECUTION_WS $HOME/actuators_ws
+RUN mkdir -p $EXECUTION_WS
+COPY ./src $EXECUTION_WS/src
+
+# build execution package
+WORKDIR $EXECUTION_WS
+RUN catkin_make
+RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
+
+WORKDIR $HOME
 
 CMD ["/bin/bash", "-ic", "$HOME/run_planner.sh && tail -f /dev/null"]
