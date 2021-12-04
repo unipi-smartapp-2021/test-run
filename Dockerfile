@@ -18,6 +18,8 @@ RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
 
 COPY ./scripts/run_planner.sh $HOME/run_planner.sh
 
+RUN sudo apt-get install -y netcat
+
 # make execution workspace
 ENV EXECUTION_WS $HOME/actuators_ws
 RUN mkdir -p $EXECUTION_WS
@@ -29,5 +31,7 @@ RUN catkin_make
 RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
 
 WORKDIR $HOME
+ENV CARLA_PORT 2000
+ENV ROS_MASTER_PORT 11311
 
 CMD ["/bin/bash", "-ic", "$HOME/run_planner.sh && tail -f /dev/null"]
