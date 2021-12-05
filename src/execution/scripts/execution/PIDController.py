@@ -55,7 +55,7 @@ class PIDController():
         self.last_time = rospy.get_time()
 
         e = target - current
-        P = self.Kp * e * dt
+        P = self.Kp * e
         I = self.integral + self.Ki * e * dt
         D = self.Kd * (e - self.error[-1])/dt
 

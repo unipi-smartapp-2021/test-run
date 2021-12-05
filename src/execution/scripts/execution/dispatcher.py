@@ -28,8 +28,8 @@ class Dispatcher():
                 Kp=3.0, Ki=1.5, Kd=0.0, minv=0, maxv=1)
 
         self.steering_control = PIDController(0.0,
-                Kp=4.0, Ki=2.5, Kd=0.0, minv=-1.0, maxv=1.0,
-                guard=0.015,
+                Kp=2.0, Ki=1.0, Kd=0.0, minv=-1.0, maxv=1.0,
+                guard=0.01,
                 verbose=True)
 
         self.braking_control = PIDController(0.0,
