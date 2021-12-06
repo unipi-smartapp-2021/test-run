@@ -34,4 +34,18 @@ WORKDIR $HOME
 ENV CARLA_PORT 2000
 ENV ROS_MASTER_PORT 11311
 
+COPY ./scripts/change_car_location.sh $HOME/change_car_location.sh
+
+ARG RIGHT_SIDE=0
+# Move car to the right if specified
+RUN if [ $RIGHT_SIDE -ne 0 ]; then \
+      ./change_car_location.sh '-199.0'; \
+    fi
+
+ARG LEFT_SIDE=0
+# Move car to the left if specified
+RUN if [ $LEFT_SIDE -ne 0 ]; then \
+      ./change_car_location.sh '-195.4'; \
+    fi
+
 CMD ["/bin/bash", "-ic", "$HOME/run_planner.sh && tail -f /dev/null"]

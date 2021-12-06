@@ -1,12 +1,30 @@
 #!/bin/sh
 
+
 USERNAME=noetic
+BUILDARGS=""
+
+options=$(getopt --longoptions right,left -n 'run_amd' --options '' -- "$@")
+[ $? -eq 0 ] || { 
+  echo "Usage: run_amd [--right | --left]"
+  exit 1
+}
+eval set -- "$options"
+while true; do
+  case "$1" in
+    --right ) BUILDARGS="$BUILDARGS --build-arg RIGHT_SIDE=1"; shift ;;
+    --left ) BUILDARGS="$BUILDARGS --build-arg LEFT_SIDE=1"; shift ;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
 
 # remove existing running ros container
 docker stop ros 
 docker rm ros
+
 # build and run new ros container
-docker build --rm -t ros . &&
+docker build --rm $BUILDARGS -t ros . &&
 
 # the -opengl is automatically discarted by CARLA 0.9.12+
 RENDER_OPTS="-opengl -quality-level=Low -RenderOffScreen"
