@@ -37,31 +37,6 @@ class Dispatcher():
                 guard=3.0,
                 verbose=True)
 
-        # Steering wheel
-        self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
-        self.steer_pub = rospy.Publisher(
-                topics.STEER_DESIRED_WHEEL_ANGLE,
-                Float32
-                )
-        # self.steer_current_angle_sub = ...
-
-        # Brake
-        self.brake_homing_pub = rospy.Publisher(topics.BRAKE_HOMING, Bool)
-        self.brake_engage_pub = rospy.Publisher(topics.BRAKE_ENGAGE, Bool)
-        self.brake_des_percent_pub = rospy.Publisher(
-                topics.BRAKE_DESIRED_PERCENT,
-                Float32
-                )
-
-        # Clutch
-        self.clutch_enable_pub = rospy.Publisher(topics.CLUTCH_ENABLE, Bool)
-        self.clutch_engage_pub = rospy.Publisher(topics.CLUTCH_ENGAGE, Bool)
-
-        # PPS (Pedal Position Sensor)
-        self.pps_pub = rospy.Publisher(topics.PPS, Float32)
-
-        self.pps_sub = rospy.Subscriber(topics.PPS, Float32, lambda data: self.log_msg(data))
-
         # CARLA vehicle control commands
         self.cmd_pub = rospy.Publisher('/carla/ego_vehicle/vehicle_control_cmd',
                 carla_msgs.msg.CarlaEgoVehicleControl)
@@ -74,15 +49,6 @@ class Dispatcher():
         # STP stub subscription
         self.stp_sub = rospy.Subscriber('stp_data', STP_Data,
                 lambda data: self.update_command(data))
-
-        # Initialize actuators states
-        self.init_actuators()
-
-    def log_msg(self, data):
-        rospy.loginfo(data)
-
-    def init_actuators(self):
-        pass
     
     def update_command(self, data):
         self.last_cmd = data
