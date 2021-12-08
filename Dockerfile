@@ -12,6 +12,7 @@ COPY ./planning $PLANNING_WS/src/
 WORKDIR $PLANNING_WS
 RUN catkin_make && \
     source $PLANNING_WS/devel/setup.bash && \
+    apt-get update && \
     rosdep update && \
     rosdep install -y planning
 RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
