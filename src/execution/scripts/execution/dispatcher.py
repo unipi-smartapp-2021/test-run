@@ -28,12 +28,14 @@ class Dispatcher():
                 Kp=3.0, Ki=1.5, Kd=0.0, minv=0, maxv=1)
 
         self.steering_control = PIDController(0.0,
-                Kp=2.0, Ki=1.0, Kd=0.0, minv=-1.0, maxv=1.0,
+                Kp=1.5, Ki=0.5, Kd=0.0, minv=-1.0, maxv=1.0,
                 guard=0.01,
-                verbose=True)
+                verbose=False)
 
         self.braking_control = PIDController(0.0,
-                Kp=6.5, Ki=1.5, Kd=0.0, minv=0.0, maxv=1.0)
+                Kp=0.1, Ki=0.5, Kd=0.0, minv=0.0, maxv=1.0,
+                guard=3.0,
+                verbose=True)
 
         # Steering wheel
         self.steer_enable_pub = rospy.Publisher(topics.STEER_ENABLE, Bool)
@@ -84,15 +86,6 @@ class Dispatcher():
     
     def update_command(self, data):
         self.last_cmd = data
-
-    def update_status(self, data):
-        # get current linear (forward) velocity
-        self.current_velocity = data.velocity
-        q = data.orientation
-        (x, y, z) = euler_from_quaternion([q.x, q.y, q.z, q.w])
-        self.current_zorient = z
-
-    def update_control(self, data):
         # Get target velocity
         self.target_velocity = self.current_velocity + data.dv
 
@@ -102,6 +95,15 @@ class Dispatcher():
 
         self.target_zorient = -data.psi + data.dt
         # self.target_zorient = 0.0
+
+    def update_status(self, data):
+        # get current linear (forward) velocity
+        self.current_velocity = data.velocity
+        q = data.orientation
+        (x, y, z) = euler_from_quaternion([q.x, q.y, q.z, q.w])
+        self.current_zorient = z
+
+    def update_control(self, data):
         rospy.loginfo('current dv: {:.3f}'.format(data.dv))
         rospy.loginfo('current psi: {:.3f}\t target dt: {:.3}'.format(data.psi, data.dt))
         rospy.loginfo('current z: {:.3f}\t target z: {:.3}'.format(self.current_zorient, self.target_zorient))
@@ -129,7 +131,7 @@ class Dispatcher():
         self.cmd_pub.publish(cmd)
 
     def spin(self):
-        rate = rospy.Rate(50) # 100hz
+        rate = rospy.Rate(20) # 100hz
         while not rospy.is_shutdown():
             if self.last_cmd:
                 self.update_control(self.last_cmd)
