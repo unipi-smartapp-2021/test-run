@@ -1,6 +1,7 @@
 # Commands to let our sensors run
 
-**Make sure that your python packets installed match the one within the file requirements.txt**
+**Make sure that your python packets installed match the one within the file requirements.txt**.
+
 In order to run following commands make sure that you executed this command before: source ~/catkin_ws/devel/setup.bash
 
 By running the following commands, you should see the cone detection in action in real-time. Each one of those commands opens a window that shows the cone detection.
