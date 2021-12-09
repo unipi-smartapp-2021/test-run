@@ -18,5 +18,6 @@ To subscribe to the output of the lidar, type: `rostopic echo /model/lidar/outpu
 If you want to change the model confidence of the model that recognizes the cones on the lidar, <br />
 type: `rostopic pub /lidar/confidence std_msgs/Float32 <float_value>`.
 
-To do the same, but for the camera, type: `rostopic pub /camera/confidence std_msgs/Float32 <float_value>`. The <float_value> should be inside the range [0,1].
+To do the same, but for the camera, type: `rostopic pub /camera/confidence std_msgs/Float32 <float_value>`. <br />
+**The <float_value> should be inside the range [0,1].** <br />
 For instance, you can type: `rostopic pub /camera/confidence std_msgs/Float32 0.4` that sets the model confidence of the stereo camera to 0.4.
