@@ -1,0 +1,6 @@
+[submodule "src/KB/KB-backbone"]
+	path = src/KB/KB-backbone
+	url = https://github.com/unipi-smartapp-2021/KB-backbone.git
+[submodule "src/KB/KB-logging"]
+	path = src/KB/KB-logging
+	url = https://github.com/unipi-smartapp-2021/KB-logging.git
