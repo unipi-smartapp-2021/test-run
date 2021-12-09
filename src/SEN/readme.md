@@ -1,4 +1,4 @@
-# Commands to let our sensors run
+# Commands to let sensors run
 
 **Make sure that your python packets installed match the one within the file requirements.txt**.
 
