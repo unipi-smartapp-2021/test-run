@@ -1,10 +1,10 @@
 # Commands to let our sensors run
 
-In order to run following commands make sure that you executed this command: source ~/catkin_ws/devel/setup.bash
+In order to run following commands make sure that you executed this command before: source ~/catkin_ws/devel/setup.bash
 
 By running the following commands, you should see the cone detection in action in real-time. Each one of those commands opens a window that shows the cone detection.
 
-To run the stereo camera, type: rosrun smartapp rgb_camera.py 
+To run the stereo camera, type: `< rosrun smartapp rgb_camera.py >`
 
 To tun the lidar, type: rosrun smartapp lidar.py
 
