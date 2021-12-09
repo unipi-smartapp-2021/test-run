@@ -28,14 +28,14 @@ class Dispatcher():
                 Kp=3.0, Ki=1.5, Kd=0.0, minv=0, maxv=1)
 
         self.steering_control = PIDController(0.0,
-                Kp=1.5, Ki=0.5, Kd=0.0, minv=-1.0, maxv=1.0,
-                guard=0.01,
-                verbose=False)
+                Kp=1.0, Ki=0.1, Kd=0.3, minv=-1.0, maxv=1.0,
+                guard=0.1,
+                verbose=True)
 
         self.braking_control = PIDController(0.0,
                 Kp=0.1, Ki=0.5, Kd=0.0, minv=0.0, maxv=1.0,
                 guard=3.0,
-                verbose=True)
+                verbose=False)
 
         # CARLA vehicle control commands
         self.cmd_pub = rospy.Publisher('/carla/ego_vehicle/vehicle_control_cmd',
