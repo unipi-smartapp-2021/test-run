@@ -1,16 +1,18 @@
 # Commands to let our sensors run
 
+**Make sure that your python packets installed match the one within the file requirements.txt**
 In order to run following commands make sure that you executed this command before: source ~/catkin_ws/devel/setup.bash
 
 By running the following commands, you should see the cone detection in action in real-time. Each one of those commands opens a window that shows the cone detection.
 
+##Main commands
 To run the stereo camera, type: `rosrun smartapp rgb_camera.py`
 
 To tun the lidar, type: `rosrun smartapp lidar.py`
 
 To subscribe to the output of the lidar, type: `rostopic echo /model/lidar/output`
 
-Other commands:
+##Other commands:
 
 If you want to change the model confidence of the model that recognizes the cones on the lidar, type: `rostopic pub /lidar/confidence std_msgs/Float32 <float_value>`.
 
