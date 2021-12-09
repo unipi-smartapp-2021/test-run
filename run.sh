@@ -37,7 +37,6 @@ if [ $ARCH = "undefined" ]; then
   exit 1
 fi
 
-IMAGE=ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-${GAPI}
 # remove existing running ros container
 docker stop kerubless
 docker rm kerubless
@@ -46,10 +45,10 @@ docker build \
   --rm \
   $BUILDARGS \
   --build-arg CARLA_VERSION=$CARLA_VERSION \
+  --build-arg ARCH=$ARCH \
   --build-arg GAPI=$GAPI \
   --build-arg ETEAM_ASSETS=$LOAD_ASSETS \
-  --cache-from $IMAGE \
-  -t $IMAGE \
+  -t kerubless \
   .
 
 # the -opengl is automatically discarted by CARLA 0.9.12+
@@ -81,7 +80,7 @@ if [ $ARCH = "amd" ]; then
     --env=TERM=xterm-256color \
     -u "$ROS_VERSION" \
     --name kerubless \
-    $IMAGE \
+    kerubless \
     $@
 
 else
@@ -98,6 +97,6 @@ else
     --env=TERM=xterm-256color \
     -u "$ROS_VERSION" \
     --name kerubless \
-    $IMAGE \
+    kerubless \
     $@
 fi

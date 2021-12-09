@@ -1,5 +1,8 @@
+# TODO: add ARCH and GAPI build args
 ARG CARLA_VERSION=0.9.13
-FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-amd-vulkan
+ARG ARCH=nvidia
+ARG GAPI=vulkan
+FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-${GAPI}
 USER $USERNAME
 SHELL ["/bin/bash", "-ic"]
 
@@ -12,7 +15,7 @@ COPY ./planning $PLANNING_WS/src/
 WORKDIR $PLANNING_WS
 RUN catkin_make && \
     source $PLANNING_WS/devel/setup.bash && \
-    apt-get update && \
+    sudo apt-get update && \
     rosdep update && \
     rosdep install -y planning
 RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
