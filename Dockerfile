@@ -2,7 +2,7 @@
 ARG CARLA_VERSION=0.9.13
 ARG ARCH=nvidia
 ARG GAPI=vulkan
-FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-${GAPI}
+FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-${GAPI}-cuda
 USER $USERNAME
 SHELL ["/bin/bash", "-ic"]
 
@@ -39,12 +39,11 @@ RUN mega-get $SENSORS_URL && \
     rmdir smartapp
 
 # SENSORS DEPENDENCIES
-RUN sudo pip3 install --ignore-installed testresources opencv-python pandas numpy open3d Pillow
-# RUN sudo conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-RUN sudo wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run
-RUN sudo apt-get install nvidia-driver-470 -y
-RUN sudo sh cuda_11.3.0_465.19.01_linux.run --silent --toolkit --no-drm
-RUN sudo pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html && sudo pip3 install seaborn
+RUN sudo pip3 install --ignore-installed seaborn testresources opencv-python pandas numpy open3d Pillow
+# RUN sudo wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run
+# RUN sudo apt-get install nvidia-driver-470 -y
+# RUN sudo sh cuda_11.3.0_465.19.01_linux.run --silent --toolkit --no-drm
+RUN sudo pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html 
 
 
 RUN sudo apt-get update && \
