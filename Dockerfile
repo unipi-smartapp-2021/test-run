@@ -24,6 +24,31 @@ RUN sudo apt-get update && \
     source $SLAM_WS/devel/setup.bash
 RUN echo "source $SLAM_WS/devel/setup.bash" >> ~/.bashrc
 
+# make sensors workspace
+ENV SENSORS_WS $HOME/sensors_ws
+RUN mkdir -p $SENSORS_WS/src
+
+# build sensors workspace
+WORKDIR $SENSORS_WS
+
+ARG SENSORS_URL='https://mega.nz/file/W5kQyQoJ#1fUw4aVEO48Yec7tsK1ONYN8pE4sjMxL7IIMIVZnj20'
+RUN mega-get $SENSORS_URL && \
+    unzip smartapp*.zip && \
+    rm smartapp*.zip && \
+    mv smartapp/* ./src && \
+    rmdir smartapp
+
+# SENSORS DEPENDENCIES
+RUN sudo pip3 install --ignore-installed opencv-python pandas numpy open3d Pillow
+RUN sudo conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+
+RUN sudo apt-get update && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src -r -y && \
+    catkin_make && \
+    source $SENSORS_WS/devel/setup.bash
+RUN echo "source $SENSORS_WS/devel/setup.bash" >> ~/.bashrc
+
 # make planning workspace
 ENV PLANNING_WS $HOME/planning_ws
 RUN mkdir -p $PLANNING_WS/src
