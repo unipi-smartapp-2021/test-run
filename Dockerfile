@@ -6,6 +6,24 @@ FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-
 USER $USERNAME
 SHELL ["/bin/bash", "-ic"]
 
+# make slam workspace
+ENV SLAM_WS $HOME/slam_ws
+RUN mkdir -p $SLAM_WS/src
+COPY ./SLAM/ $SLAM_WS/
+
+# build slam workspace
+WORKDIR $SLAM_WS
+RUN sudo cp utils/pointcloud_to_laserscan_nodelet.cpp src/pointcloud_to_laserscan/src/pointcloud_to_laserscan_nodelet.cpp && \
+    sudo cp utils/sample_node.launch src/pointcloud_to_laserscan/launch/sample_node.launch && \
+    sudo cp utils/laser_scan_matcher.cpp src/scan_tools/laser_scan_matcher/src/laser_scan_matcher.cpp
+
+RUN sudo apt-get update && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src -r -y && \
+    catkin_make && \
+    source $SLAM_WS/devel/setup.bash
+RUN echo "source $SLAM_WS/devel/setup.bash" >> ~/.bashrc
+
 # make planning workspace
 ENV PLANNING_WS $HOME/planning_ws
 RUN mkdir -p $PLANNING_WS/src
@@ -33,6 +51,7 @@ COPY ./src $EXECUTION_WS/src
 WORKDIR $EXECUTION_WS
 RUN catkin_make
 RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
+
 
 WORKDIR $HOME
 ENV CARLA_PORT 2000

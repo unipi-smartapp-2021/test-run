@@ -1,3 +1,6 @@
 [submodule "planning"]
 	path = planning
 	url = https://github.com/unipi-smartapp-2021/planning
+[submodule "SLAM"]
+	path = SLAM
+	url = git@github.com:unipi-smartapp-2021/SLAM.git
