@@ -4,3 +4,6 @@
 [submodule "src/KB/KB-logging"]
 	path = src/KB/KB-logging
 	url = https://github.com/unipi-smartapp-2021/KB-logging.git
+[submodule "src/KB/SLAM"]
+	path = src/KB/SLAM
+	url = https://github.com/unipi-smartapp-2021/SLAM.git
