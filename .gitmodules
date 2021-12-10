@@ -7,3 +7,6 @@
 [submodule "src/ACT/actuators-control"]
 	path = src/ACT/actuators-control
 	url = git@github.com:unipi-smartapp-2021/actuators-control.git
+[submodule "src/KB/SLAM"]
+	path = src/KB/SLAM
+	url = https://github.com/unipi-smartapp-2021/SLAM.git
