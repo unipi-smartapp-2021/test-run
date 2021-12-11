@@ -90,10 +90,12 @@ else
     -e KERUBLESS_SPAWN_X=$CAR_X \
     -e KERUBLESS_SPAWN_Y=$CAR_Y \
     -e KERUBLESS_SPAWN_Z=$CAR_Z \
+    -e NVIDIA_DRIVER_CAPABILITIES=all \
     --privileged --rm -it \
     --net=host \
     --gpus all \
     --runtime=nvidia \
+    --ipc=host \
     --env=TERM=xterm-256color \
     -u "$ROS_VERSION" \
     --name kerubless \
