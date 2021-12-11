@@ -83,15 +83,16 @@ WORKDIR $SENSORS_WS
 # ARG SENSORS_URL='https://mega.nz/file/W5kQyQoJ#1fUw4aVEO48Yec7tsK1ONYN8pE4sjMxL7IIMIVZnj20'
 # ARG SENSORS_URL='https://mega.nz/file/Dt9hlQgb#mc8i95NwX115wvRFV1Z43zuHBwcZ9XoWXhjwoAn0gtE'
 # ARG SENSORS_URL='https://mega.nz/file/CgMEEZYB#0AZAPnDxGYWGMhwFjQ08e1Evyv7pQFXEZ05g-Jvp144'
-ARG SENSORS_URL='https://mega.nz/file/bxVjQKxb#qP8iG55NnYnB_tljb_ji9xcRSoboRrkHLXISbFb7R5I'
+# ARG SENSORS_URL='https://mega.nz/file/bxVjQKxb#qP8iG55NnYnB_tljb_ji9xcRSoboRrkHLXISbFb7R5I'
+ARG SENSORS_URL='https://mega.nz/file/vktzwCQY#7EGiBNU8-CBy4as3CJ1mXHQl0uZNhzHJA1ROJryxGIM'
 RUN mega-get $SENSORS_URL && \
     unzip smartapp*.zip && \
     rm smartapp*.zip && \
     mv smartapp src/smartapp
 
-RUN sudo pip3 install -r $SENSORS_WS/src/smartapp/requirements.txt
+# RUN sudo pip3 install -r $SENSORS_WS/src/smartapp/requirements.txt
 # uncomment this if pip3 is failing to install single packages
-# RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 sudo pip3 install
+RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 sudo pip3 install
 
 
 # SENSORS DEPENDENCIES
