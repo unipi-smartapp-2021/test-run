@@ -80,7 +80,8 @@ RUN sudo pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==
 # build sensors workspace
 WORKDIR $SENSORS_WS
 
-ARG SENSORS_URL='https://mega.nz/file/W5kQyQoJ#1fUw4aVEO48Yec7tsK1ONYN8pE4sjMxL7IIMIVZnj20'
+# ARG SENSORS_URL='https://mega.nz/file/W5kQyQoJ#1fUw4aVEO48Yec7tsK1ONYN8pE4sjMxL7IIMIVZnj20'
+ARG SENSORS_URL='https://mega.nz/file/Dt9hlQgb#mc8i95NwX115wvRFV1Z43zuHBwcZ9XoWXhjwoAn0gtE'
 RUN mega-get $SENSORS_URL && \
     unzip smartapp*.zip && \
     rm smartapp*.zip && \
