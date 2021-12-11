@@ -97,8 +97,8 @@ RUN mega-get $SENSORS_URL && \
 
 # RUN sudo pip3 install -r $SENSORS_WS/src/smartapp/requirements.txt
 # uncomment this if pip3 is failing to install single packages
-RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 sudo pip3 install
-
+RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 sudo pip3 install || true
+RUN sudo pip3 install open3d==0.13.0
 
 # SENSORS DEPENDENCIES
 
