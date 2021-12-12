@@ -97,9 +97,9 @@ RUN mega-get $SENSORS_URL && \
 
 # RUN sudo pip3 install -r $SENSORS_WS/src/smartapp/requirements.txt
 # uncomment this if pip3 is failing to install single packages
-RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 sudo pip3 install || true
-RUN sudo pip3 install open3d==0.13.0
-
+RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 pip3 install || true
+RUN pip3 install open3d==0.13.0
+ENV PATH=$PATH:$HOME/.local/bin
 # SENSORS DEPENDENCIES
 
 # RUN sudo wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run
@@ -124,4 +124,6 @@ RUN sudo apt-get update && \
     source $SENSORS_WS/devel/setup.bash
 RUN echo "source $SENSORS_WS/devel/setup.bash" >> ~/.bashrc
 
-CMD ["/bin/bash", "-ic", "$HOME/run_planner.sh && tail -f /dev/null"]
+WORKDIR $HOME
+
+CMD ["/bin/bash", "-ic", "$HOME/run_all.sh $CARLA_RENDER_OPTS && tail -f /dev/null"]
