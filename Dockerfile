@@ -45,7 +45,7 @@ RUN sudo apt-get install -y netcat
 # make execution workspace
 ENV EXECUTION_WS $HOME/actuators_ws
 RUN mkdir -p $EXECUTION_WS
-COPY ./src $EXECUTION_WS/src
+COPY ./actuators-control/src $EXECUTION_WS/src
 
 # build execution package
 WORKDIR $EXECUTION_WS
