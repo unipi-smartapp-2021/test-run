@@ -1,12 +1,15 @@
-[submodule "src/KB/KB-backbone"]
-	path = src/KB/KB-backbone
-	url = https://github.com/unipi-smartapp-2021/KB-backbone.git
-[submodule "src/KB/KB-logging"]
-	path = src/KB/KB-logging
-	url = https://github.com/unipi-smartapp-2021/KB-logging.git
-[submodule "src/ACT/actuators-control"]
-	path = src/ACT/actuators-control
-	url = git@github.com:unipi-smartapp-2021/actuators-control.git
-[submodule "src/KB/SLAM"]
-	path = src/KB/SLAM
+[submodule "planning"]
+	path = planning
+	url = https://github.com/unipi-smartapp-2021/planning
+[submodule "SLAM"]
+	path = SLAM
 	url = https://github.com/unipi-smartapp-2021/SLAM.git
+[submodule "actuators-control"]
+	path = actuators-control
+	url = https://github.com/unipi-smartapp-2021/actuators-control.git
+[submodule "KB-backbone"]
+	path = KB-backbone
+	url = https://github.com/unipi-smartapp-2021/KB-backbone.git
+[submodule "KB-logging"]
+	path = KB-logging
+	url = https://github.com/unipi-smartapp-2021/KB-logging.git
