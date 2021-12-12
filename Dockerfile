@@ -1,4 +1,3 @@
-# TODO: add ARCH and GAPI build args
 ARG CARLA_VERSION=0.9.13
 ARG ARCH=nvidia
 ARG GAPI=vulkan
@@ -52,25 +51,6 @@ WORKDIR $EXECUTION_WS
 RUN catkin_make
 RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
 
-
-WORKDIR $HOME
-ENV CARLA_PORT 2000
-ENV ROS_MASTER_PORT 11311
-
-COPY ./scripts/change_car_location.sh $HOME/change_car_location.sh
-
-ARG RIGHT_SIDE=0
-# Move car to the right if specified
-RUN if [ $RIGHT_SIDE -ne 0 ]; then \
-      ./change_car_location.sh '-199.0'; \
-    fi
-
-ARG LEFT_SIDE=0
-# Move car to the left if specified
-RUN if [ $LEFT_SIDE -ne 0 ]; then \
-      ./change_car_location.sh '-195.4'; \
-    fi
-
 # make sensors workspace
 ENV SENSORS_WS $HOME/sensors_ws
 RUN mkdir -p $SENSORS_WS/src
@@ -100,5 +80,21 @@ RUN sudo apt-get update && \
 RUN echo "source $SENSORS_WS/devel/setup.bash" >> ~/.bashrc
 
 WORKDIR $HOME
+ENV CARLA_PORT 2000
+ENV ROS_MASTER_PORT 11311
+
+COPY ./scripts/change_car_location.sh $HOME/change_car_location.sh
+
+ARG RIGHT_SIDE=0
+# Move car to the right if specified
+RUN if [ $RIGHT_SIDE -ne 0 ]; then \
+      ./change_car_location.sh '-199.0'; \
+    fi
+
+ARG LEFT_SIDE=0
+# Move car to the left if specified
+RUN if [ $LEFT_SIDE -ne 0 ]; then \
+      ./change_car_location.sh '-195.4'; \
+    fi
 
 CMD ["/bin/bash", "-ic", "$HOME/run_all.sh $CARLA_RENDER_OPTS && tail -f /dev/null"]
