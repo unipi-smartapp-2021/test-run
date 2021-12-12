@@ -95,7 +95,8 @@ RUN sudo apt-get update && \
     rosdep update && \
     rosdep install --from-paths src --ignore-src -r -y && \
     catkin_make && \
-    source $SENSORS_WS/devel/setup.bash
+    source $SENSORS_WS/devel/setup.bash && \
+    sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*
 RUN echo "source $SENSORS_WS/devel/setup.bash" >> ~/.bashrc
 
 WORKDIR $HOME
