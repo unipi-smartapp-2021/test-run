@@ -4,3 +4,6 @@
 [submodule "SLAM"]
 	path = SLAM
 	url = https://github.com/unipi-smartapp-2021/SLAM.git
+[submodule "actuators-control"]
+	path = actuators-control
+	url = https://github.com/unipi-smartapp-2021/actuators-control.git
