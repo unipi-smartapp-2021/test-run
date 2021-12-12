@@ -24,7 +24,6 @@ RUN sudo apt-get update && \
     source $SLAM_WS/devel/setup.bash
 RUN echo "source $SLAM_WS/devel/setup.bash" >> ~/.bashrc
 
-
 # make planning workspace
 ENV PLANNING_WS $HOME/planning_ws
 RUN mkdir -p $PLANNING_WS/src
@@ -81,7 +80,7 @@ RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.
 
 WORKDIR $SENSORS_WS
 
-ARG SENSORS_URL='https://mega.nz/file/mw13zYxY#VDxfuSXjSwZMrGgCYHtTyygor6tPYUwkzo0rQe_QlWo'
+ARG SENSORS_URL='https://mega.nz/file/jp8G1Agb#HpyklePLw2sBDTnjpRhCGTSR66snQmj5WBoVQuHhvWA'
 RUN mega-get $SENSORS_URL && \
     unzip sensory.zip && \
     rm sensory.zip && \
