@@ -17,18 +17,18 @@ function wait_node () {
 }
 
 function spawn_sensors () {
-  rosrun sensory rgb_camera.py > /dev/null &
-  sleep 10
-  rosrun sensory lidar.py > /dev/null &
-  sleep 20
-  rosrun sensory output_fusion.py > /dev/null &
+  rosrun sensory rgb_camera.py &
+  sleep 25
+  rosrun sensory lidar.py &
+  sleep 25
+  rosrun sensory output_fusion.py &
 }
 
 function spawn_slam () {
   rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node > /dev/null &
-  sleep 10
-  rosrun cone_mapping cone_mapping.py > /dev/null &
-  sleep 10
+  sleep 25
+  rosrun cone_mapping cone_mapping.py /dev/null &
+  sleep 25
   rosparam set use_sim_time true
   rosrun laser_scan_matcher laser_scan_matcher_node > /dev/null &
 }
@@ -38,25 +38,24 @@ function signal_start () {
 }
 
 function spawn_planning () {
+  cd $PLANNING_WS/src
+  rosrun planning ROS_Stp.py > /dev/null &
+  sleep 10
+  rosrun planning Main_LTP.py > /dev/null &
+  sleep 10
+  rosrun execution dispatcher.py &
+}
+
+function spawn_track () {
   echo "LAUNCHING CAR..."
   $HOME/run_etdv_car.sh ${CARLA_RENDER_OPTS} > /dev/null &
 
   echo "WAITING FOR VEHICLE..."
   wait_node "carla_manual_control_ego_vehicle"
   echo "VEHICLE IS READY!"
-  sleep 10
+  sleep 30
 
   $HOME/run_etdv_track.sh ${CARLA_RENDER_OPTS} > /dev/null &
-  sleep 30
-}
-
-function spawn_track () {
-  cd $PLANNING_WS/src
-  rosrun planning ROS_Stp.py > /dev/null &
-  sleep 5
-  rosrun planning Main_LTP.py > /dev/null &
-  sleep 5
-  rosrun execution dispatcher.py &
 }
 
 $HOME/run_carla.sh ${CARLA_RENDER_OPTS} > /dev/null &
@@ -78,8 +77,10 @@ echo "WAITING FOR RVIZ..."
 wait_node "rviz"
 echo "RVIZ IS READY!"
 
+sleep 60
+
 spawn_track
-sleep 20
+sleep 40
 spawn_sensors
 sleep 20
 spawn_slam
