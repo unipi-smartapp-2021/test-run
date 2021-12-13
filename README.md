@@ -8,13 +8,15 @@ This repository holds the references to every submodule of the Driverless system
 * [`Execution`](https://github.com/unipi-smartapp-2021/actuators-control)
 
 The integrated system is built on top of [carla-ros](https://github.com/unipi-smartapp-2021/ETEAM-MIRROR-etdv_simulator/tree/dockerized-install)
-as a docker container, please refer to the aforementioned docummentation for setup instructions.
+as a docker container, please refer to the aforementioned docummentation for setup instructions. Make sure to
+carefully follow Section [`Some dependencies`](https://github.com/unipi-smartapp-2021/ETEAM-MIRROR-etdv_simulator/tree/dockerized-install#some-dependencies) and have the `Nvidia container toolkit` installed on your system.
+
 
 ## Hardware Requirements
 As of now, the current system architecture has strict hardware requirements: to work, an Nvidia graphics card must be available with the latest drivers installed and it must have `CUDA` compatibility with at least version `11.3`. Make sure you have the CUDA runtime installed on your host machine and that it matches (at least) the version indicated above.
 
 ## Installation
-If you havent, please clone the repository with:
+If you haven't, please clone the repository with:
 ```
 git clone --recursive <url>
 ```
@@ -23,6 +25,7 @@ to update the submodules, run:
 ```
 git submodule update --init --recursive
 ```
+It is recommended to also run the above command when checking out different remote branches.
 
 ## Running
 Make sure you have *docker* installed. Then to build and run the docker container, run:
@@ -31,7 +34,9 @@ Make sure you have *docker* installed. Then to build and run the docker containe
 ```
 The above command will build the docker image by pulling `carla-ros` from the
 [Container Registry](https://github.com/unipi-smartapp-2021/ETEAM-MIRROR-etdv_simulator/pkgs/container/carla-ros).
-When done, the script will spawn the docker container and will launch the CARLA simulator along with the car and acceleration track.
+When done, the script will spawn the docker container and will launch the entire Driverless system, along with the CARLA simulator.
+The manual `start` command will also be sent (for more information on timings and order of execution of nodes, please refer to `scripts/run_system.sh`).
+
 For backward (and forward) compatibility, you need to indicate on which system you want the system to be deployed on, by specifying the ``--nvidia`` and ``--vulkan`` flags. Other flags, albeit compliant with the specification, won't work.
 
 If you only want to log into the container with a shell, run:
@@ -63,4 +68,29 @@ docker stop kerubless
 ```
 
 ## Updating Submodules
-**TODO**
+To update single submodules to a different version, follow these steps:
+It is **strongly** recommended to perform updates on a different branch and the open
+a new Pull Request to review the changes through GitHub.
+
+The following steps assume you're on a local branch other than `main`:
+```
+cd <submodule> 
+git checkout <submodule_branch>
+```
+Then pull the branch updates and checkout the wanted commit hash or release tag.
+You can also just pull and settle for the latest changes of your module, but using
+a [Release Tag](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+is more manageable. Also make sure you indicate the new module version in your Pull Request.
+```
+git pull
+git checkout <tag or commit>
+```
+You can then safely commit your changes and push them to your remote repository
+```
+cd .. 
+git add <submodule>
+git commit
+git push --set-upstream origin <your_new_branch>
+```
+
+Lastly, open a Pull Request on GitHub on the `main` branch and have it reviewd by a mantainer of this repository.
