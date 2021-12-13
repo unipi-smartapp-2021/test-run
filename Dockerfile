@@ -54,21 +54,16 @@ RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
 # make sensors workspace
 ENV SENSORS_WS $HOME/sensors_ws
 RUN mkdir -p $SENSORS_WS/src
+COPY ./sensory-cone-detection/sensory $SENSORS_WS/src/sensory
+COPY ./sensory-cone-detection/requirements.txt $SENSORS_WS/src/sensory/requirements.txt
 
 # install sensors dependencies
 RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html 
+RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 pip3 install || true
+# RUN pip3 install open3d==0.13.0
+ENV PATH=$PATH:$HOME/.local/bin
 
 WORKDIR $SENSORS_WS
-
-ARG SENSORS_URL='https://mega.nz/file/jp8G1Agb#HpyklePLw2sBDTnjpRhCGTSR66snQmj5WBoVQuHhvWA'
-RUN mega-get $SENSORS_URL && \
-    unzip sensory.zip && \
-    rm sensory.zip && \
-    mv sensory src/smartapp
-
-RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 pip3 install || true
-RUN pip3 install open3d==0.13.0
-ENV PATH=$PATH:$HOME/.local/bin
 
 # build sensors workspace
 RUN sudo apt-get update && \
