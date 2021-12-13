@@ -3,10 +3,9 @@ This repository holds the references to every submodule of the Driverless system
 * [`KB-backbone`](https://github.com/unipi-smartapp-2021/KB-backbone)
 * [`KB-logging`](https://github.com/unipi-smartapp-2021/KB-logging)
 * [`SLAM`](https://github.com/unipi-smartapp-2021/SLAM)
+* [`Sensory`](https://github.com/unipi-smartapp-2021/sensory-cone-detection)
 * [`Planning`](https://github.com/unipi-smartapp-2021/planning)
 * [`Execution`](https://github.com/unipi-smartapp-2021/actuators-control)
-
-As of now, the `Sensory` module doesn not have a GitHub repository because of file system limitations. For this reason, the submodule is currently hosted on MEGA and (automatically) deployed on the fly.
 
 The integrated system is built on top of [carla-ros](https://github.com/unipi-smartapp-2021/ETEAM-MIRROR-etdv_simulator/tree/dockerized-install)
 as a docker container, please refer to the aforementioned docummentation for setup instructions.
