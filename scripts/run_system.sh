@@ -25,9 +25,9 @@ function spawn_sensors () {
 }
 
 function spawn_slam () {
-  rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node > /dev/null &
+  rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node &> /dev/null &
   sleep 25
-  rosrun cone_mapping cone_mapping.py /dev/null &
+  rosrun cone_mapping cone_mapping.py &> /dev/null &
   sleep 25
   rosparam set use_sim_time true
   rosrun laser_scan_matcher laser_scan_matcher_node &> /dev/null &
