@@ -30,7 +30,7 @@ function spawn_slam () {
   rosrun cone_mapping cone_mapping.py /dev/null &
   sleep 25
   rosparam set use_sim_time true
-  rosrun laser_scan_matcher laser_scan_matcher_node > /dev/null &
+  rosrun laser_scan_matcher laser_scan_matcher_node &> /dev/null &
 }
 
 function signal_start () {
