@@ -83,6 +83,7 @@ ENV CARLA_PORT 2000
 ENV ROS_MASTER_PORT 11311
 
 COPY ./scripts/change_car_location.sh $HOME/change_car_location.sh
+COPY ./scripts/run_system.sh $HOME/run_system.sh
 
 ARG RIGHT_SIDE=0
 # Move car to the right if specified
@@ -96,4 +97,5 @@ RUN if [ $LEFT_SIDE -ne 0 ]; then \
       ./change_car_location.sh '-195.4'; \
     fi
 
-CMD ["/bin/bash", "-ic", "$HOME/run_all.sh $CARLA_RENDER_OPTS && tail -f /dev/null"]
+
+CMD ["/bin/bash", "-ic", "$HOME/run_system.sh && tail -f /dev/null"]
