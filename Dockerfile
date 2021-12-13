@@ -51,17 +51,21 @@ WORKDIR $EXECUTION_WS
 RUN catkin_make
 RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
 
+# install sensors dependencies
+ENV PATH=$PATH:$HOME/.local/bin
+RUN python3 -m pip install \
+    torch==1.10.0+cu113 \
+    torchvision==0.11.1+cu113 \
+    torchaudio==0.10.0+cu113 \
+    -f https://download.pytorch.org/whl/cu113/torch_stable.html 
+
+COPY ./sensory-cone-detection/requirements.txt $SENSORS_WS/src/sensory/requirements.txt
+RUN cat $SENSORS_WS/src/sensory/requirements.txt | xargs -n 1 python3 -m pip install || true
+
 # make sensors workspace
 ENV SENSORS_WS $HOME/sensors_ws
 RUN mkdir -p $SENSORS_WS/src
 COPY ./sensory-cone-detection/sensory $SENSORS_WS/src/sensory
-COPY ./sensory-cone-detection/requirements.txt $SENSORS_WS/src/sensory/requirements.txt
-
-# install sensors dependencies
-RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html 
-RUN cat $SENSORS_WS/src/smartapp/requirements.txt | xargs -n 1 pip3 install || true
-# RUN pip3 install open3d==0.13.0
-ENV PATH=$PATH:$HOME/.local/bin
 
 WORKDIR $SENSORS_WS
 
