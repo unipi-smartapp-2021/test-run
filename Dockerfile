@@ -5,6 +5,8 @@ FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-
 USER $USERNAME
 SHELL ["/bin/bash", "-ic"]
 
+RUN sudo apt-get update && sudo apt-get install -y netcat
+
 # install sensors dependencies
 ENV PATH=$PATH:$HOME/.local/bin
 RUN python3 -m pip install \
@@ -76,8 +78,6 @@ RUN catkin_make && \
 RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
 
 COPY ./scripts/run_planner.sh $HOME/run_planner.sh
-
-RUN sudo apt-get install -y netcat
 
 WORKDIR $HOME
 ENV CARLA_PORT 2000
