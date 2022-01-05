@@ -13,3 +13,6 @@
 [submodule "KB-logging"]
 	path = KB-logging
 	url = https://github.com/unipi-smartapp-2021/KB-logging.git
+[submodule "sensory-cone-detection"]
+	path = sensory-cone-detection
+	url = https://github.com/unipi-smartapp-2021/sensory-cone-detection.git
