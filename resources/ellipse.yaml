@@ -1,0 +1,1004 @@
+cones:
+- position:
+  - 2.993972159306861
+  - 0.19008079675604653
+  - 0
+  type: big orange
+- position:
+  - 2.993972159306861
+  - -0.19008079675604653
+  - 0
+  type: big orange
+- position:
+  - 3.148076537191258
+  - -2.608436076807512
+  - 0
+  type: small yellow
+- position:
+  - 3.66177238725141
+  - -5.415236839240915
+  - 0
+  type: small yellow
+- position:
+  - 4.541132310975555
+  - -8.227559035703363
+  - 0
+  type: small yellow
+- position:
+  - 5.792042342950853
+  - -11.03822727945327
+  - 0
+  type: small yellow
+- position:
+  - 7.4183258600019375
+  - -13.836098077164037
+  - 0
+  type: small yellow
+- position:
+  - 9.42061171540698
+  - -16.607237515811082
+  - 0
+  type: small yellow
+- position:
+  - 11.795969823905628
+  - -19.336224943323753
+  - 0
+  type: small yellow
+- position:
+  - 14.53806732770499
+  - -22.00721837450092
+  - 0
+  type: small yellow
+- position:
+  - 17.63756869672535
+  - -24.604674791410034
+  - 0
+  type: small yellow
+- position:
+  - 21.08258806611013
+  - -27.113767855763477
+  - 0
+  type: small yellow
+- position:
+  - 24.859097632581186
+  - -29.52059355585213
+  - 0
+  type: small yellow
+- position:
+  - 28.951261018681155
+  - -31.81224793631073
+  - 0
+  type: small yellow
+- position:
+  - 33.341693740033634
+  - -33.97683735042399
+  - 0
+  type: small yellow
+- position:
+  - 38.01166526719213
+  - -36.003458710131966
+  - 0
+  type: small yellow
+- position:
+  - 42.94125893627823
+  - -37.88217049321823
+  - 0
+  type: small yellow
+- position:
+  - 48.10950353328761
+  - -39.60396472898415
+  - 0
+  type: small yellow
+- position:
+  - 53.49448695301622
+  - -41.16074415582538
+  - 0
+  type: small yellow
+- position:
+  - 59.07345921695768
+  - -42.54530557906717
+  - 0
+  type: small yellow
+- position:
+  - 64.82292969912962
+  - -43.75132895842624
+  - 0
+  type: small yellow
+- position:
+  - 70.71876164549502
+  - -44.77337116238508
+  - 0
+  type: small yellow
+- position:
+  - 76.73626585099346
+  - -45.606863197228925
+  - 0
+  type: small yellow
+- position:
+  - 82.85029453511464
+  - -46.24810980628996
+  - 0
+  type: small yellow
+- position:
+  - 89.03533591342571
+  - -46.69429051196305
+  - 0
+  type: small yellow
+- position:
+  - 95.26560961027624
+  - -46.94346137676477
+  - 0
+  type: small yellow
+- position:
+  - 101.51516283585877
+  - -46.994556962895565
+  - 0
+  type: small yellow
+- position:
+  - 107.75796711873149
+  - -46.84739216359572
+  - 0
+  type: small yellow
+- position:
+  - 113.96801531838184
+  - -46.50266376438461
+  - 0
+  type: small yellow
+- position:
+  - 120.11941862903068
+  - -45.961951772596215
+  - 0
+  type: small yellow
+- position:
+  - 126.18650332326797
+  - -45.227720735513806
+  - 0
+  type: small yellow
+- position:
+  - 132.14390707951884
+  - -44.30332145642572
+  - 0
+  type: small yellow
+- position:
+  - 137.9666749088226
+  - -43.19299371695842
+  - 0
+  type: small yellow
+- position:
+  - 143.63035497570888
+  - -41.90187081965455
+  - 0
+  type: small yellow
+- position:
+  - 149.1110950450146
+  - -40.43598696046384
+  - 0
+  type: small yellow
+- position:
+  - 154.38574095529938
+  - -38.80228858452146
+  - 0
+  type: small yellow
+- position:
+  - 159.43193952361582
+  - -37.00865087987428
+  - 0
+  type: small yellow
+- position:
+  - 164.22824975886948
+  - -35.06390024416427
+  - 0
+  type: small yellow
+- position:
+  - 168.75426834638284
+  - -32.97784258635113
+  - 0
+  type: small yellow
+- position:
+  - 172.99077815501172
+  - -30.761295113747735
+  - 0
+  type: small yellow
+- position:
+  - 176.91993187469762
+  - -28.426114838945114
+  - 0
+  type: small yellow
+- position:
+  - 180.52548607073754
+  - -25.985208985015266
+  - 0
+  type: small yellow
+- position:
+  - 183.79310184152803
+  - -23.45249900882989
+  - 0
+  type: small yellow
+- position:
+  - 186.71072225432115
+  - -20.842789913038473
+  - 0
+  type: small yellow
+- position:
+  - 189.2690154254414
+  - -18.1714719010551
+  - 0
+  type: small yellow
+- position:
+  - 191.4618240259774
+  - -15.453963022276922
+  - 0
+  type: small yellow
+- position:
+  - 193.28647981273744
+  - -12.704816457594607
+  - 0
+  type: small yellow
+- position:
+  - 194.7437426804147
+  - -9.936509600160937
+  - 0
+  type: small yellow
+- position:
+  - 195.8370794460969
+  - -7.158140565632734
+  - 0
+  type: small yellow
+- position:
+  - 196.57113557622094
+  - -4.374534229805494
+  - 0
+  type: small yellow
+- position:
+  - 196.9496542383185
+  - -1.5863966749033829
+  - 0
+  type: small yellow
+- position:
+  - 196.973597557231
+  - 1.2081287394997655
+  - 0
+  type: small yellow
+- position:
+  - 196.6403828357659
+  - 4.0108729321743715
+  - 0
+  type: small yellow
+- position:
+  - 195.94465285951344
+  - 6.821052759501393
+  - 0
+  type: small yellow
+- position:
+  - 194.8801611398284
+  - 9.63371525485016
+  - 0
+  type: small yellow
+- position:
+  - 193.4418593088363
+  - 12.439583698064977
+  - 0
+  type: small yellow
+- position:
+  - 191.6274317608253
+  - 15.225952297007849
+  - 0
+  type: small yellow
+- position:
+  - 189.4380231320358
+  - 17.97799059699863
+  - 0
+  type: small yellow
+- position:
+  - 186.87830538352267
+  - 20.679955516530093
+  - 0
+  type: small yellow
+- position:
+  - 183.95616925125202
+  - 23.31608537054704
+  - 0
+  type: small yellow
+- position:
+  - 180.68228054340213
+  - 25.87115872105339
+  - 0
+  type: small yellow
+- position:
+  - 177.069642661715
+  - 28.33079439896341
+  - 0
+  type: small yellow
+- position:
+  - 173.13322454332615
+  - 30.681584043222575
+  - 0
+  type: small yellow
+- position:
+  - 168.88966513497311
+  - 32.911130095394505
+  - 0
+  type: small yellow
+- position:
+  - 164.35704420437767
+  - 35.00803757104559
+  - 0
+  type: small yellow
+- position:
+  - 159.55470328245502
+  - 36.9618878793245
+  - 0
+  type: small yellow
+- position:
+  - 154.50310143162562
+  - 38.76320950298048
+  - 0
+  type: small yellow
+- position:
+  - 149.22369371513145
+  - 40.403452294309695
+  - 0
+  type: small yellow
+- position:
+  - 143.7388236000871
+  - 41.87496772629615
+  - 0
+  type: small yellow
+- position:
+  - 138.07162331708955
+  - 43.17099522592137
+  - 0
+  type: small yellow
+- position:
+  - 132.24591828600666
+  - 44.28565374325012
+  - 0
+  type: small yellow
+- position:
+  - 126.28613319151506
+  - 45.21393738985439
+  - 0
+  type: small yellow
+- position:
+  - 120.21719829757238
+  - 45.95171398107691
+  - 0
+  type: small yellow
+- position:
+  - 114.06445526038115
+  - 46.495725460045236
+  - 0
+  type: small yellow
+- position:
+  - 107.85356213805684
+  - 46.843589376798924
+  - 0
+  type: small yellow
+- position:
+  - 101.61039757613123
+  - 46.99380080130813
+  - 0
+  type: small yellow
+- position:
+  - 95.36096432115258
+  - 46.945734248050734
+  - 0
+  type: small yellow
+- position:
+  - 89.13129231170659
+  - 46.69964537874227
+  - 0
+  type: small yellow
+- position:
+  - 82.94734163524319
+  - 46.25667243166225
+  - 0
+  type: small yellow
+- position:
+  - 76.83490562737977
+  - 45.618837506358474
+  - 0
+  type: small yellow
+- position:
+  - 70.81951432548931
+  - 44.789048017374604
+  - 0
+  type: small yellow
+- position:
+  - 64.92633835795915
+  - 43.77109882459659
+  - 0
+  type: small yellow
+- position:
+  - 59.180093130095806
+  - 42.569675751172184
+  - 0
+  type: small yellow
+- position:
+  - 53.604942817069556
+  - 41.19036140388753
+  - 0
+  type: small yellow
+- position:
+  - 48.22440313234781
+  - 39.63964438817717
+  - 0
+  type: small yellow
+- position:
+  - 43.061241018524576
+  - 37.92493309806092
+  - 0
+  type: small yellow
+- position:
+  - 38.13736818729457
+  - 36.054575132135156
+  - 0
+  type: small yellow
+- position:
+  - 33.473723673474936
+  - 34.037882795081785
+  - 0
+  type: small yellow
+- position:
+  - 29.09013813397198
+  - 31.88516364563077
+  - 0
+  type: small yellow
+- position:
+  - 25.00516950731821
+  - 29.607751887358436
+  - 0
+  type: small yellow
+- position:
+  - 21.23589622673759
+  - 27.218030371362165
+  - 0
+  type: small yellow
+- position:
+  - 17.79765175156536
+  - 24.729422442257352
+  - 0
+  type: small yellow
+- position:
+  - 14.703685945589246
+  - 22.156316143888606
+  - 0
+  type: small yellow
+- position:
+  - 11.964751188352134
+  - 19.513860337253305
+  - 0
+  type: small yellow
+- position:
+  - 9.588644332489206
+  - 16.817548575256044
+  - 0
+  type: small yellow
+- position:
+  - 7.5798007084919305
+  - 14.082500205323658
+  - 0
+  type: small yellow
+- position:
+  - 5.939131897610607
+  - 11.32239617673682
+  - 0
+  type: small yellow
+- position:
+  - 4.664383944060257
+  - 8.548176378573949
+  - 0
+  type: small yellow
+- position:
+  - 3.751262901300165
+  - 5.7668627726667365
+  - 0
+  type: small yellow
+- position:
+  - 3.195304512118423
+  - 2.9811151860721785
+  - 0
+  type: small yellow
+- position:
+  - 2.993972159306861
+  - -0.190080796756035
+  - 0
+  type: small yellow
+- position:
+  - -2.7454118315681337
+  - -3.733955888848939
+  - 0
+  type: small blue
+- position:
+  - -2.052734953410471
+  - -7.244008518134011
+  - 0
+  type: small blue
+- position:
+  - -0.9268717635168988
+  - -10.697565400337657
+  - 0
+  type: small blue
+- position:
+  - 0.6182173777779072
+  - -14.076571438654653
+  - 0
+  type: small blue
+- position:
+  - 2.5674505918089827
+  - -17.36724649268468
+  - 0
+  type: small blue
+- position:
+  - 4.905801681378502
+  - -20.559008050221674
+  - 0
+  type: small blue
+- position:
+  - 7.61872251877015
+  - -23.643266265593414
+  - 0
+  type: small blue
+- position:
+  - 10.692057258338028
+  - -26.612455235545955
+  - 0
+  type: small blue
+- position:
+  - 14.111724737038418
+  - -29.45940695414972
+  - 0
+  type: small blue
+- position:
+  - 17.86336042767815
+  - -32.17702504970056
+  - 0
+  type: small blue
+- position:
+  - 21.932013743623198
+  - -34.7581674128018
+  - 0
+  type: small blue
+- position:
+  - 26.301931360304817
+  - -37.19565321190048
+  - 0
+  type: small blue
+- position:
+  - 30.956423948539936
+  - -39.482333515329344
+  - 0
+  type: small blue
+- position:
+  - 35.87780131590337
+  - -41.61118771904371
+  - 0
+  type: small blue
+- position:
+  - 41.04735914948213
+  - -43.57542471181534
+  - 0
+  type: small blue
+- position:
+  - 46.445402944611914
+  - -45.36857826596729
+  - 0
+  type: small blue
+- position:
+  - 52.05129809244724
+  - -46.98459218893283
+  - 0
+  type: small blue
+- position:
+  - 57.843538182665036
+  - -48.41789395638467
+  - 0
+  type: small blue
+- position:
+  - 63.799825982495996
+  - -49.663457068084426
+  - 0
+  type: small blue
+- position:
+  - 69.89716328884998
+  - -50.71685298202231
+  - 0
+  type: small blue
+- position:
+  - 76.11194704712109
+  - -51.57429363512524
+  - 0
+  type: small blue
+- position:
+  - 82.42006993149928
+  - -52.23266549493084
+  - 0
+  type: small blue
+- position:
+  - 88.79702410637208
+  - -52.68955593416237
+  - 0
+  type: small blue
+- position:
+  - 95.21800722497531
+  - -52.94327254153602
+  - 0
+  type: small blue
+- position:
+  - 101.65802993110285
+  - -52.992855804491946
+  - 0
+  type: small blue
+- position:
+  - 108.09202425262622
+  - -52.83808543159852
+  - 0
+  type: small blue
+- position:
+  - 114.49495233627519
+  - -52.479480423708665
+  - 0
+  type: small blue
+- position:
+  - 120.84191498400749
+  - -51.918292848881656
+  - 0
+  type: small blue
+- position:
+  - 127.10825941473905
+  - -51.15649512048039
+  - 0
+  type: small blue
+- position:
+  - 133.2696855839655
+  - -50.196760415041126
+  - 0
+  type: small blue
+- position:
+  - 139.30235022980315
+  - -49.04243569349972
+  - 0
+  type: small blue
+- position:
+  - 145.18296754544593
+  - -47.697506609479035
+  - 0
+  type: small blue
+- position:
+  - 150.88890495498546
+  - -46.166553417980005
+  - 0
+  type: small blue
+- position:
+  - 156.39827181792268
+  - -44.45469687895567
+  - 0
+  type: small blue
+- position:
+  - 161.68999790391752
+  - -42.567533173208915
+  - 0
+  type: small blue
+- position:
+  - 166.7438970301875
+  - -40.51105719126156
+  - 0
+  type: small blue
+- position:
+  - 171.54070919488146
+  - -38.291574551535135
+  - 0
+  type: small blue
+- position:
+  - 176.0621117801392
+  - -35.91560493788144
+  - 0
+  type: small blue
+- position:
+  - 180.29068707385989
+  - -33.3897837831154
+  - 0
+  type: small blue
+- position:
+  - 184.20983021522898
+  - -30.720777401261817
+  - 0
+  type: small blue
+- position:
+  - 187.8035808054674
+  - -27.91524014851074
+  - 0
+  type: small blue
+- position:
+  - 191.05636747666355
+  - -24.97986225970258
+  - 0
+  type: small blue
+- position:
+  - 193.95267606097252
+  - -21.92158163960626
+  - 0
+  type: small blue
+- position:
+  - 196.47670013120424
+  - -18.748051310289966
+  - 0
+  type: small blue
+- position:
+  - 198.61211491016203
+  - -15.468439226548359
+  - 0
+  type: small blue
+- position:
+  - 200.3422146966667
+  - -12.094543678493144
+  - 0
+  type: small blue
+- position:
+  - 201.65069828918197
+  - -8.641999031702255
+  - 0
+  type: small blue
+- position:
+  - 202.52324893839594
+  - -5.1310701006127495
+  - 0
+  type: small blue
+- position:
+  - 202.9496542383185
+  - -1.5863966749033829
+  - 0
+  type: small blue
+- position:
+  - 202.925710919406
+  - 1.9646646103070202
+  - 0
+  type: small blue
+- position:
+  - 202.45400167885097
+  - 5.494731398243892
+  - 0
+  type: small blue
+- position:
+  - 201.54312487576544
+  - 8.979086837833615
+  - 0
+  type: small blue
+- position:
+  - 200.205796237253
+  - 12.397338023803897
+  - 0
+  type: small blue
+- position:
+  - 198.45673541406316
+  - 15.733671986078006
+  - 0
+  type: small blue
+- position:
+  - 196.3110923963564
+  - 18.97606203555902
+  - 0
+  type: small blue
+- position:
+  - 193.78366835437814
+  - 22.11506294366275
+  - 0
+  type: small blue
+- position:
+  - 190.88878434746204
+  - 25.142696656210937
+  - 0
+  type: small blue
+- position:
+  - 187.6405133957434
+  - 28.051653786793604
+  - 0
+  type: small blue
+- position:
+  - 184.0530357425644
+  - 30.83482766522367
+  - 0
+  type: small blue
+- position:
+  - 180.14097628684246
+  - 33.48510422309712
+  - 0
+  type: small blue
+- position:
+  - 175.91966539182476
+  - 35.995316008406576
+  - 0
+  type: small blue
+- position:
+  - 171.40531240629113
+  - 38.35828704249179
+  - 0
+  type: small blue
+- position:
+  - 166.61510258467936
+  - 40.566919864380225
+  - 0
+  type: small blue
+- position:
+  - 161.56723414507832
+  - 42.61429617375871
+  - 0
+  type: small blue
+- position:
+  - 156.2809113415965
+  - 44.49377596049664
+  - 0
+  type: small blue
+- position:
+  - 150.7763062848685
+  - 46.19908808413418
+  - 0
+  type: small blue
+- position:
+  - 145.07449892106766
+  - 47.72440970283745
+  - 0
+  type: small blue
+- position:
+  - 139.1974018215362
+  - 49.06443418453677
+  - 0
+  type: small blue
+- position:
+  - 133.16767437747774
+  - 50.21442812821671
+  - 0
+  type: small blue
+- position:
+  - 127.00862954649187
+  - 51.17027846613983
+  - 0
+  type: small blue
+- position:
+  - 120.74413531546573
+  - 51.928530640400965
+  - 0
+  type: small blue
+- position:
+  - 114.39851239427588
+  - 52.48641872804804
+  - 0
+  type: small blue
+- position:
+  - 107.99642923330092
+  - 52.841888218395304
+  - 0
+  type: small blue
+- position:
+  - 101.5627951908303
+  - 52.99361196607938
+  - 0
+  type: small blue
+- position:
+  - 95.12265251409895
+  - 52.94099967025006
+  - 0
+  type: small blue
+- position:
+  - 88.70106770809123
+  - 52.68420106738315
+  - 0
+  type: small blue
+- position:
+  - 82.32302283137082
+  - 52.224102869558564
+  - 0
+  type: small blue
+- position:
+  - 76.01330727073473
+  - 51.56231932599569
+  - 0
+  type: small blue
+- position:
+  - 69.7964106088557
+  - 50.70117612703279
+  - 0
+  type: small blue
+- position:
+  - 63.696417323666516
+  - 49.64368720191409
+  - 0
+  type: small blue
+- position:
+  - 57.736904269526825
+  - 48.39352378427964
+  - 0
+  type: small blue
+- position:
+  - 51.94084222839386
+  - 46.95497494087066
+  - 0
+  type: small blue
+- position:
+  - 46.33050334555171
+  - 45.33289860677427
+  - 0
+  type: small blue
+- position:
+  - 40.92737706723583
+  - 43.532662106972666
+  - 0
+  type: small blue
+- position:
+  - 35.75209839580086
+  - 41.56007129704051
+  - 0
+  type: small blue
+- position:
+  - 30.8243940150986
+  - 39.42128807067154
+  - 0
+  type: small blue
+- position:
+  - 26.163054245013992
+  - 37.122737502580435
+  - 0
+  type: small blue
+- position:
+  - 21.78594186888623
+  - 34.67100908129552
+  - 0
+  type: small blue
+- position:
+  - 17.71005226705066
+  - 32.072762534101855
+  - 0
+  type: small blue
+- position:
+  - 13.951641682198407
+  - 29.334659303302395
+  - 0
+  type: small blue
+- position:
+  - 10.526438640453772
+  - 26.463357466158275
+  - 0
+  type: small blue
+- position:
+  - 7.4499411543236445
+  - 23.465630871663883
+  - 0
+  type: small blue
+- position:
+  - 4.7377690642962484
+  - 20.348696990776677
+  - 0
+  type: small blue
+- position:
+  - 2.4059757433189897
+  - 17.12084436452505
+  - 0
+  type: small blue
+- position:
+  - 0.47112782311815327
+  - 13.792402541371118
+  - 0
+  type: small blue
+- position:
+  - -1.0501233966016295
+  - 10.376948057467025
+  - 0
+  type: small blue
+- position:
+  - -2.142225467459226
+  - 6.892382584708167
+  - 0
+  type: small blue
+- position:
+  - -2.792639806495299
+  - 3.3612767795842733
+  - 0
+  type: small blue
+- position:
+  - -2.993972159306861
+  - 0.1900807967560595
+  - 0
+  type: small blue
+description: ellipse-shaped track layout
+init_offset: 2
+name: ellipse

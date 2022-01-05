@@ -1,0 +1,9 @@
+<launch>
+
+    <arg name='track_file' default='$(find etdv_simulator)/resources/ellipse.yaml'/>
+
+    <node pkg="etdv_simulator" name="track_spawner" type="spawn_track.py">
+        <param name="track_file" value="$(arg track_file)"/>
+    </node>
+
+</launch>

@@ -96,5 +96,9 @@ ARG LEFT_SIDE=0
 RUN if [ $LEFT_SIDE -ne 0 ]; then \
       ./change_car_location.sh '-195.4'; \
     fi
+COPY ./resources/ellipse.yaml /home/noetic/etdv_simulator_ws/src/etdv_simulator/resources/
+COPY ./resources/empty_track.xodr /home/noetic/CARLA_0.9.13/CarlaUE4/Content/Carla/Maps/OpenDrive/empty.xodr
+COPY ./resources/spawn_custom_track.launch /home/noetic/etdv_simulator_ws/src/etdv_simulator/launch/
+COPY ./resources/spawn_custom_vehicle.launch /home/noetic/etdv_simulator_ws/src/etdv_simulator/launch
 
 CMD ["/bin/bash", "-ic", "$HOME/run_all.sh $CARLA_RENDER_OPTS && tail -f /dev/null"]
