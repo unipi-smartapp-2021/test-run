@@ -34,6 +34,8 @@ function spawn_mission () {
   sleep 1
   rosrun planning Main_LTP.py > /dev/null &
   sleep 1
+  rosrun execution kinematics_broker.py > /dev/null &
+  sleep 1
   rosrun execution dispatcher.py &
   sleep 1
 }
