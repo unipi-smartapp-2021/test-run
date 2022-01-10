@@ -5,51 +5,7 @@ FROM ghcr.io/unipi-smartapp-2021/carla-ros:noetic-carla${CARLA_VERSION}-${ARCH}-
 USER $USERNAME
 SHELL ["/bin/bash", "-ic"]
 
-# make slam workspace
-ENV SLAM_WS $HOME/slam_ws
-RUN mkdir -p $SLAM_WS/src
-COPY ./SLAM/ $SLAM_WS/
-
-# build slam workspace
-WORKDIR $SLAM_WS
-RUN sudo cp utils/pointcloud_to_laserscan_nodelet.cpp src/pointcloud_to_laserscan/src/pointcloud_to_laserscan_nodelet.cpp && \
-    sudo cp utils/sample_node.launch src/pointcloud_to_laserscan/launch/sample_node.launch && \
-    sudo cp utils/laser_scan_matcher.cpp src/scan_tools/laser_scan_matcher/src/laser_scan_matcher.cpp
-
-RUN sudo apt-get update && \
-    rosdep update && \
-    rosdep install --from-paths src --ignore-src -r -y && \
-    catkin_make && \
-    source $SLAM_WS/devel/setup.bash
-RUN echo "source $SLAM_WS/devel/setup.bash" >> ~/.bashrc
-
-# make planning workspace
-ENV PLANNING_WS $HOME/planning_ws
-RUN mkdir -p $PLANNING_WS/src
-COPY ./planning $PLANNING_WS/src/
-
-# build planning package
-WORKDIR $PLANNING_WS
-RUN catkin_make && \
-    source $PLANNING_WS/devel/setup.bash && \
-    sudo apt-get update && \
-    rosdep update && \
-    rosdep install -y planning
-RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
-
-COPY ./scripts/run_planner.sh $HOME/run_planner.sh
-
-RUN sudo apt-get install -y netcat
-
-# make execution workspace
-ENV EXECUTION_WS $HOME/actuators_ws
-RUN mkdir -p $EXECUTION_WS
-COPY ./actuators-control/src $EXECUTION_WS/src
-
-# build execution package
-WORKDIR $EXECUTION_WS
-RUN catkin_make
-RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
+RUN sudo apt-get update && sudo apt-get install -y netcat
 
 # install sensors dependencies
 ENV PATH=$PATH:$HOME/.local/bin
@@ -78,6 +34,51 @@ RUN sudo apt-get update && \
     sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*
 RUN echo "source $SENSORS_WS/devel/setup.bash" >> ~/.bashrc
 
+
+# make slam workspace
+ENV SLAM_WS $HOME/slam_ws
+RUN mkdir -p $SLAM_WS/src
+COPY ./SLAM/ $SLAM_WS/
+
+# build slam workspace
+WORKDIR $SLAM_WS
+RUN sudo cp utils/pointcloud_to_laserscan_nodelet.cpp src/pointcloud_to_laserscan/src/pointcloud_to_laserscan_nodelet.cpp && \
+    sudo cp utils/sample_node.launch src/pointcloud_to_laserscan/launch/sample_node.launch && \
+    sudo cp utils/laser_scan_matcher.cpp src/scan_tools/laser_scan_matcher/src/laser_scan_matcher.cpp
+
+RUN sudo apt-get update && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src -r -y && \
+    catkin_make && \
+    source $SLAM_WS/devel/setup.bash
+RUN echo "source $SLAM_WS/devel/setup.bash" >> ~/.bashrc
+
+# make execution workspace
+ENV EXECUTION_WS $HOME/actuators_ws
+RUN mkdir -p $EXECUTION_WS
+COPY ./actuators-control/src $EXECUTION_WS/src
+
+# build execution package
+WORKDIR $EXECUTION_WS
+RUN catkin_make
+RUN echo "source $EXECUTION_WS/devel/setup.bash" >> ~/.bashrc
+
+# make planning workspace
+ENV PLANNING_WS $HOME/planning_ws
+RUN mkdir -p $PLANNING_WS/src
+COPY ./planning $PLANNING_WS/src/
+
+# build planning package
+WORKDIR $PLANNING_WS
+RUN catkin_make && \
+    source $PLANNING_WS/devel/setup.bash && \
+    sudo apt-get update && \
+    rosdep update && \
+    rosdep install -y planning
+RUN echo "source $PLANNING_WS/devel/setup.bash" >> ~/.bashrc
+
+COPY ./scripts/run_planner.sh $HOME/run_planner.sh
+
 WORKDIR $HOME
 ENV CARLA_PORT 2000
 ENV ROS_MASTER_PORT 11311
@@ -100,6 +101,5 @@ COPY ./resources/ellipse.yaml /home/noetic/etdv_simulator_ws/src/etdv_simulator/
 COPY ./resources/empty_track.xodr /home/noetic/CARLA_0.9.13/CarlaUE4/Content/Carla/Maps/OpenDrive/empty.xodr
 COPY ./resources/spawn_custom_track.launch /home/noetic/etdv_simulator_ws/src/etdv_simulator/launch/
 COPY ./resources/spawn_custom_vehicle.launch /home/noetic/etdv_simulator_ws/src/etdv_simulator/launch
-
 
 CMD ["/bin/bash", "-ic", "$HOME/run_system.sh && tail -f /dev/null"]
