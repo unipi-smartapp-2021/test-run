@@ -8,13 +8,13 @@
   <!-- Ego vehicle -->
   <arg name='role_name' default='ego_vehicle'/>
   <arg name="vehicle_filter" default='vehicle.*'/>
-  <arg name="spawn_x" default='0.0'/>
-  <arg name="spawn_y" default='0.0'/>
+  <arg name="spawn_x" default='-286.5'/>
+  <arg name="spawn_y" default='-409.5'/>
   <arg name="spawn_z" default='0.0'/>
-  <arg name="spawn_point" default="$(arg spawn_x),$(arg spawn_y),$(arg spawn_z),0.0,0.0,90.0"/><!-- use comma separated format "x,y,z,roll,pitch,yaw" -->
+  <arg name="spawn_point" default="$(arg spawn_x),$(arg spawn_y),$(arg spawn_z),0.0,0.0,-180.0"/><!-- use comma separated format "x,y,z,roll,pitch,yaw" -->
 
   <!-- Map to load on startup (either a predefined CARLA town (e.g. 'Town01'), or a OpenDRIVE map file) -->
-  <arg name="town" default='/home/noetic/CARLA_0.9.13/CarlaUE4/Content/Carla/Maps/OpenDrive/empty.xodr'/>
+  <arg name="town" default='Town04'/>
 
   <!-- Enable/disable passive mode -->
   <arg name='passive' default='false'/>

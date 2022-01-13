@@ -1,0 +1,984 @@
+cones:
+- position:
+  - -436.4407555038578
+  - -361.0455041150994
+  - 0
+  type: big orange
+- position:
+  - -438.530498099413
+  - -363.19793898852123
+  - 0
+  type: big orange
+- position:
+  - -440.0929845645448
+  - -357.49974728680746
+  - 0
+  type: small yellow
+- position:
+  - -442.2033249235614
+  - -359.63199107425436
+  - 0
+  type: small blue
+- position:
+  - -443.5782994777229
+  - -353.9851420535901
+  - 0
+  type: small yellow
+- position:
+  - -445.7980647151703
+  - -356.00322091493825
+  - 0
+  type: small blue
+- position:
+  - -446.76743961494543
+  - -350.1559975592935
+  - 0
+  type: small yellow
+- position:
+  - -449.0721034537376
+  - -352.0765507582869
+  - 0
+  type: small blue
+- position:
+  - -449.9747228203063
+  - -346.3073859179983
+  - 0
+  type: small yellow
+- position:
+  - -452.2993512537679
+  - -348.20372519311286
+  - 0
+  type: small blue
+- position:
+  - -453.1309749866603
+  - -342.35564656227064
+  - 0
+  type: small yellow
+- position:
+  - -455.5331872973365
+  - -344.1526930320192
+  - 0
+  type: small blue
+- position:
+  - -456.0000026075761
+  - -338.25573435723413
+  - 0
+  type: small yellow
+- position:
+  - -458.45769836913314
+  - -339.9761213903241
+  - 0
+  type: small blue
+- position:
+  - -458.9128948915792
+  - -334.0947061286318
+  - 0
+  type: small yellow
+- position:
+  - -461.39397546487805
+  - -335.7811933621438
+  - 0
+  type: small blue
+- position:
+  - -461.6356316625427
+  - -329.96900579371487
+  - 0
+  type: small yellow
+- position:
+  - -464.1798015183634
+  - -331.5587226693671
+  - 0
+  type: small blue
+- position:
+  - -464.18331507061
+  - -325.65701744006697
+  - 0
+  type: small yellow
+- position:
+  - -466.7903004850074
+  - -327.1414793119651
+  - 0
+  type: small blue
+- position:
+  - -466.5960480692184
+  - -321.2563607096388
+  - 0
+  type: small yellow
+- position:
+  - -469.2309992636139
+  - -322.69059646541746
+  - 0
+  type: small blue
+- position:
+  - -468.9787748481844
+  - -316.8465297250366
+  - 0
+  type: small yellow
+- position:
+  - -471.62106932356056
+  - -318.2671915093458
+  - 0
+  type: small blue
+- position:
+  - -471.32869517917726
+  - -312.45767697404006
+  - 0
+  type: small yellow
+- position:
+  - -474.03708588418573
+  - -313.7478784269239
+  - 0
+  type: small blue
+- position:
+  - -473.29257148494077
+  - -307.7807863149001
+  - 0
+  type: small yellow
+- position:
+  - -476.05823151495935
+  - -308.9431651680963
+  - 0
+  type: small blue
+- position:
+  - -475.2712739352493
+  - -303.07288606122756
+  - 0
+  type: small yellow
+- position:
+  - -478.0426253885673
+  - -304.22162934072594
+  - 0
+  type: small blue
+- position:
+  - -477.1735473803479
+  - -298.4217033451873
+  - 0
+  type: small yellow
+- position:
+  - -479.9910907363564
+  - -299.4519700276596
+  - 0
+  type: small blue
+- position:
+  - -478.7154711470655
+  - -293.6554545589762
+  - 0
+  type: small yellow
+- position:
+  - -481.56962777604986
+  - -294.57946210073374
+  - 0
+  type: small blue
+- position:
+  - -480.30123718480667
+  - -288.75749677707097
+  - 0
+  type: small yellow
+- position:
+  - -483.16542948186003
+  - -289.6499106303364
+  - 0
+  type: small blue
+- position:
+  - -481.74640417187334
+  - -283.9344776242406
+  - 0
+  type: small yellow
+- position:
+  - -484.6462329430776
+  - -284.7032383787645
+  - 0
+  type: small blue
+- position:
+  - -482.9074013780653
+  - -278.91149635312286
+  - 0
+  type: small yellow
+- position:
+  - -485.83023949345977
+  - -279.58752693763597
+  - 0
+  type: small blue
+- position:
+  - -484.04310225875713
+  - -274.00178678024844
+  - 0
+  type: small yellow
+- position:
+  - -486.97421240404276
+  - -274.64099982470526
+  - 0
+  type: small blue
+- position:
+  - -485.0450018915081
+  - -269.1154570684122
+  - 0
+  type: small yellow
+- position:
+  - -487.999974347775
+  - -269.6332772907905
+  - 0
+  type: small blue
+- position:
+  - -485.78622270765084
+  - -264.02853043127845
+  - 0
+  type: small yellow
+- position:
+  - -488.75482165084065
+  - -264.4614511104936
+  - 0
+  type: small blue
+- position:
+  - -486.5272352609743
+  - -258.95072964000616
+  - 0
+  type: small yellow
+- position:
+  - -489.50597285322556
+  - -259.3072718626234
+  - 0
+  type: small blue
+- position:
+  - -486.988483356631
+  - -254.0304306263231
+  - 0
+  type: small yellow
+- position:
+  - -489.98220629676456
+  - -254.22439700928203
+  - 0
+  type: small blue
+- position:
+  - -487.16989279656764
+  - -248.9700105595507
+  - 0
+  type: small yellow
+- position:
+  - -490.1679537847439
+  - -249.07785447998867
+  - 0
+  type: small blue
+- position:
+  - -487.35244118746084
+  - -243.89623594252723
+  - 0
+  type: small yellow
+- position:
+  - -490.3511977939253
+  - -243.98260037493785
+  - 0
+  type: small blue
+- position:
+  - -487.4603762180852
+  - -238.90507011557852
+  - 0
+  type: small yellow
+- position:
+  - -490.45983415005907
+  - -238.962097427622
+  - 0
+  type: small blue
+- position:
+  - -487.5427704159956
+  - -233.88013107155217
+  - 0
+  type: small yellow
+- position:
+  - -490.5425948167832
+  - -233.91258972894332
+  - 0
+  type: small blue
+- position:
+  - -487.5714329000002
+  - -228.42752515264007
+  - 0
+  type: small yellow
+- position:
+  - -490.57140121608154
+  - -228.41373738602064
+  - 0
+  type: small blue
+- position:
+  - -487.491480590807
+  - -222.8958606737441
+  - 0
+  type: small yellow
+- position:
+  - -490.4911678505499
+  - -222.85254389020992
+  - 0
+  type: small blue
+- position:
+  - -487.40743433290083
+  - -217.0756573137489
+  - 0
+  type: small yellow
+- position:
+  - -490.40712159264376
+  - -217.03234053021467
+  - 0
+  type: small blue
+- position:
+  - -487.3264695993496
+  - -211.46884951532795
+  - 0
+  type: small yellow
+- position:
+  - -490.3261568590925
+  - -211.42553273179377
+  - 0
+  type: small blue
+- position:
+  - -487.2350173768905
+  - -205.13578311002405
+  - 0
+  type: small yellow
+- position:
+  - -490.2347046366334
+  - -205.09246632648987
+  - 0
+  type: small blue
+- position:
+  - -487.1604980792307
+  - -199.97532174708343
+  - 0
+  type: small yellow
+- position:
+  - -490.16018533897363
+  - -199.9320049635492
+  - 0
+  type: small blue
+- position:
+  - -487.08163785161
+  - -194.51425098435968
+  - 0
+  type: small yellow
+- position:
+  - -490.08132511135295
+  - -194.47093420082544
+  - 0
+  type: small blue
+- position:
+  - -486.99910452940725
+  - -188.79881842181967
+  - 0
+  type: small yellow
+- position:
+  - -489.9987917891502
+  - -188.7555016382855
+  - 0
+  type: small blue
+- position:
+  - -486.9135659480009
+  - -182.8752716594299
+  - 0
+  type: small yellow
+- position:
+  - -489.9132532077438
+  - -182.83195487589572
+  - 0
+  type: small blue
+- position:
+  - -486.82568994276954
+  - -176.78985829715705
+  - 0
+  type: small yellow
+- position:
+  - -489.82537720251247
+  - -176.74654151362287
+  - 0
+  type: small blue
+- position:
+  - -486.7361443490918
+  - -170.58882593496767
+  - 0
+  type: small yellow
+- position:
+  - -489.7358316088347
+  - -170.5455091514335
+  - 0
+  type: small blue
+- position:
+  - -287.5193727912736
+  - -407.99999999999994
+  - 0
+  type: small yellow
+- position:
+  - -287.5193727912736
+  - -410.99999999999994
+  - 0
+  type: small blue
+- position:
+  - -292.70786334933865
+  - -407.9999999999999
+  - 0
+  type: small yellow
+- position:
+  - -292.70786334933865
+  - -410.9999999999999
+  - 0
+  type: small blue
+- position:
+  - -297.86031666527526
+  - -407.9999999999999
+  - 0
+  type: small yellow
+- position:
+  - -297.86031666527526
+  - -410.9999999999999
+  - 0
+  type: small blue
+- position:
+  - -303.3493719977038
+  - -407.99999999999994
+  - 0
+  type: small yellow
+- position:
+  - -303.3493719977038
+  - -410.99999999999994
+  - 0
+  type: small blue
+- position:
+  - -308.9506280022962
+  - -407.99999999999994
+  - 0
+  type: small yellow
+- position:
+  - -308.9506280022962
+  - -410.99999999999994
+  - 0
+  type: small blue
+- position:
+  - -314.43968333472463
+  - -408.0
+  - 0
+  type: small yellow
+- position:
+  - -314.43968333472463
+  - -411.0
+  - 0
+  type: small blue
+- position:
+  - -319.5921366506613
+  - -408.0
+  - 0
+  type: small yellow
+- position:
+  - -319.5921366506613
+  - -411.0
+  - 0
+  type: small blue
+- position:
+  - -324.7806272087264
+  - -408.0
+  - 0
+  type: small yellow
+- position:
+  - -324.7806272087264
+  - -411.0
+  - 0
+  type: small blue
+- position:
+  - -330.0435489903485
+  - -408.00118144683563
+  - 0
+  type: small yellow
+- position:
+  - -330.16259427064637
+  - -410.99881855316437
+  - 0
+  type: small blue
+- position:
+  - -334.98796369352203
+  - -407.60775730898365
+  - 0
+  type: small yellow
+- position:
+  - -335.3398577305959
+  - -410.5870475913616
+  - 0
+  type: small blue
+- position:
+  - -339.98140551892953
+  - -406.8225563420753
+  - 0
+  type: small yellow
+- position:
+  - -340.44677754629066
+  - -409.7862413584274
+  - 0
+  type: small blue
+- position:
+  - -345.01714563615116
+  - -406.0318202906107
+  - 0
+  type: small yellow
+- position:
+  - -345.4825176635123
+  - -408.9955053069628
+  - 0
+  type: small blue
+- position:
+  - -349.9648947320484
+  - -405.25490101108966
+  - 0
+  type: small yellow
+- position:
+  - -350.4302667594095
+  - -408.21858602744175
+  - 0
+  type: small blue
+- position:
+  - -355.01501466609795
+  - -404.4629206460975
+  - 0
+  type: small yellow
+- position:
+  - -355.58835233726916
+  - -407.40762503105975
+  - 0
+  type: small blue
+- position:
+  - -359.8548437917858
+  - -403.3347981714328
+  - 0
+  type: small yellow
+- position:
+  - -360.5810465883957
+  - -406.2455763316841
+  - 0
+  type: small blue
+- position:
+  - -364.72522624692743
+  - -402.03817514543437
+  - 0
+  type: small yellow
+- position:
+  - -365.496915999947
+  - -404.93722583921067
+  - 0
+  type: small blue
+- position:
+  - -369.5052879037626
+  - -400.7668556164101
+  - 0
+  type: small yellow
+- position:
+  - -370.38411876366666
+  - -403.63524476707994
+  - 0
+  type: small blue
+- position:
+  - -374.34557045770964
+  - -399.08375449918356
+  - 0
+  type: small yellow
+- position:
+  - -375.3489449442437
+  - -401.9109862972101
+  - 0
+  type: small blue
+- position:
+  - -379.0510025759234
+  - -397.37885328710814
+  - 0
+  type: small yellow
+- position:
+  - -380.0729489070731
+  - -400.1994251610815
+  - 0
+  type: small blue
+- position:
+  - -383.7259324391165
+  - -395.68680954969966
+  - 0
+  type: small yellow
+- position:
+  - -384.87962296184764
+  - -398.45610516009594
+  - 0
+  type: small blue
+- position:
+  - -388.32880208166455
+  - -393.5075442136753
+  - 0
+  type: small yellow
+- position:
+  - -389.6170721282441
+  - -396.2168541418832
+  - 0
+  type: small blue
+- position:
+  - -392.9795524483614
+  - -391.28475602568426
+  - 0
+  type: small yellow
+- position:
+  - -394.2745733417302
+  - -393.99084561875736
+  - 0
+  type: small blue
+- position:
+  - -397.4618620833503
+  - -389.13805718733323
+  - 0
+  type: small yellow
+- position:
+  - -398.856323341967
+  - -391.79427212558977
+  - 0
+  type: small blue
+- position:
+  - -401.7917266241093
+  - -386.6577040932769
+  - 0
+  type: small yellow
+- position:
+  - -403.2824039274012
+  - -389.26114051029384
+  - 0
+  type: small blue
+- position:
+  - -406.1897545481236
+  - -384.1395430589078
+  - 0
+  type: small yellow
+- position:
+  - -407.70288988415973
+  - -386.72999117744615
+  - 0
+  type: small blue
+- position:
+  - -410.4387612636735
+  - -381.6092942479914
+  - 0
+  type: small yellow
+- position:
+  - -412.0719380156209
+  - -384.1257865879159
+  - 0
+  type: small blue
+- position:
+  - -414.5411552820887
+  - -378.71609301521175
+  - 0
+  type: small yellow
+- position:
+  - -416.26962634295677
+  - -381.1681101015595
+  - 0
+  type: small blue
+- position:
+  - -418.66195402752703
+  - -375.8113399569873
+  - 0
+  type: small yellow
+- position:
+  - -420.412120046547
+  - -378.247919302272
+  - 0
+  type: small blue
+- position:
+  - -422.7486183352645
+  - -372.82122527831604
+  - 0
+  type: small yellow
+- position:
+  - -424.58616754001696
+  - -375.1925989140204
+  - 0
+  type: small blue
+- position:
+  - -426.7113501960199
+  - -369.57176738742805
+  - 0
+  type: small yellow
+- position:
+  - -428.6133389977234
+  - -371.8917757059895
+  - 0
+  type: small blue
+- position:
+  - -430.6875291882685
+  - -366.31201704243153
+  - 0
+  type: small yellow
+- position:
+  - -432.5895179899725
+  - -368.63202536099266
+  - 0
+  type: small blue
+- position:
+  - -430.8224841866761
+  - -366.2013782599532
+  - 0
+  type: small yellow
+- position:
+  - -432.7244729883803
+  - -368.52138657851407
+  - 0
+  type: small blue
+- position:
+  - -430.9543504464585
+  - -366.09327168661804
+  - 0
+  type: small yellow
+- position:
+  - -432.8563392481614
+  - -368.41328000517996
+  - 0
+  type: small blue
+- position:
+  - -431.08299069034194
+  - -365.9878098650561
+  - 0
+  type: small yellow
+- position:
+  - -432.9849794920452
+  - -368.30781818361766
+  - 0
+  type: small blue
+- position:
+  - -431.2082676410548
+  - -365.8851053378949
+  - 0
+  type: small yellow
+- position:
+  - -433.11025644275855
+  - -368.20511365645626
+  - 0
+  type: small blue
+- position:
+  - -431.3300440213253
+  - -365.78527064776335
+  - 0
+  type: small yellow
+- position:
+  - -433.23203282302893
+  - -368.1052789663247
+  - 0
+  type: small blue
+- position:
+  - -431.44818255388054
+  - -365.68841833729005
+  - 0
+  type: small yellow
+- position:
+  - -433.3501713555845
+  - -368.00842665585117
+  - 0
+  type: small blue
+- position:
+  - -431.562545961449
+  - -365.5946609491033
+  - 0
+  type: small yellow
+- position:
+  - -433.4645347631524
+  - -367.91466926766486
+  - 0
+  type: small blue
+- position:
+  - -431.67299696675775
+  - -365.5041110258322
+  - 0
+  type: small yellow
+- position:
+  - -433.57498576846103
+  - -367.82411934439386
+  - 0
+  type: small blue
+- position:
+  - -431.7793982925344
+  - -365.4168811101054
+  - 0
+  type: small yellow
+- position:
+  - -433.68138709423823
+  - -367.73688942866664
+  - 0
+  type: small blue
+- position:
+  - -431.88161266150735
+  - -365.33308374455095
+  - 0
+  type: small yellow
+- position:
+  - -433.78360146321086
+  - -367.6530920631124
+  - 0
+  type: small blue
+- position:
+  - -431.9795027964042
+  - -365.2528314717977
+  - 0
+  type: small yellow
+- position:
+  - -433.88149159810723
+  - -367.57283979035964
+  - 0
+  type: small blue
+- position:
+  - -432.07293141995206
+  - -365.1762368344747
+  - 0
+  type: small yellow
+- position:
+  - -433.97492022165534
+  - -367.4962451530364
+  - 0
+  type: small blue
+- position:
+  - -432.16176125487925
+  - -365.10341237521016
+  - 0
+  type: small yellow
+- position:
+  - -434.06375005658253
+  - -367.42342069377173
+  - 0
+  type: small blue
+- position:
+  - -432.24585502391307
+  - -365.0344706366329
+  - 0
+  type: small yellow
+- position:
+  - -434.1478438256169
+  - -367.354478955194
+  - 0
+  type: small blue
+- position:
+  - -432.3250754497818
+  - -364.969524161371
+  - 0
+  type: small yellow
+- position:
+  - -434.22706425148556
+  - -367.28953247993235
+  - 0
+  type: small blue
+- position:
+  - -432.39928525521293
+  - -364.9086854920537
+  - 0
+  type: small yellow
+- position:
+  - -434.30127405691667
+  - -367.2286938106149
+  - 0
+  type: small blue
+- position:
+  - -432.4683471629341
+  - -364.8520671713092
+  - 0
+  type: small yellow
+- position:
+  - -434.37033596463795
+  - -367.17207548987045
+  - 0
+  type: small blue
+- position:
+  - -432.5321238956739
+  - -364.7997817417658
+  - 0
+  type: small yellow
+- position:
+  - -434.4341126973763
+  - -367.11979006032817
+  - 0
+  type: small blue
+- position:
+  - -432.5904781761584
+  - -364.7519417460534
+  - 0
+  type: small yellow
+- position:
+  - -434.4924669778612
+  - -367.0719500646154
+  - 0
+  type: small blue
+- position:
+  - -432.6432727271156
+  - -364.70865972680014
+  - 0
+  type: small yellow
+- position:
+  - -434.54526152882
+  - -367.0286680453609
+  - 0
+  type: small blue
+- position:
+  - -432.69037027127445
+  - -364.67004822663387
+  - 0
+  type: small yellow
+- position:
+  - -434.5923590729793
+  - -366.9900565451942
+  - 0
+  type: small blue
+- position:
+  - -432.73163353136243
+  - -364.63621978818327
+  - 0
+  type: small yellow
+- position:
+  - -434.63362233306697
+  - -366.95622810674394
+  - 0
+  type: small blue
+- position:
+  - -432.7669252301072
+  - -364.6072869540772
+  - 0
+  type: small yellow
+- position:
+  - -434.668914031811
+  - -366.92729527263845
+  - 0
+  type: small blue
+- position:
+  - -432.7961080902364
+  - -364.5833622669443
+  - 0
+  type: small yellow
+- position:
+  - -434.6980968919392
+  - -366.9033705855063
+  - 0
+  type: small blue
+- position:
+  - -432.8190448344764
+  - -364.5645582694142
+  - 0
+  type: small yellow
+- position:
+  - -434.7210336361806
+  - -366.8845665879751
+  - 0
+  type: small blue
+- position:
+  - -432.8355981855576
+  - -364.5509875041133
+  - 0
+  type: small yellow
+- position:
+  - -434.7375869872602
+  - -366.8709958226756
+  - 0
+  type: small blue
+- position:
+  - -432.84563086620665
+  - -364.5427625136714
+  - 0
+  type: small yellow
+- position:
+  - -434.7476196679071
+  - -366.86277083223536
+  - 0
+  type: small blue
+description: "-286.5, -409.5, 0.0, 0.0, 0.0, -180"
+init_offset: 0
+name: test

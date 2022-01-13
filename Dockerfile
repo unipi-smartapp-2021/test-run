@@ -101,5 +101,6 @@ COPY ./resources/ellipse.yaml /home/noetic/etdv_simulator_ws/src/etdv_simulator/
 COPY ./resources/empty_track.xodr /home/noetic/CARLA_0.9.13/CarlaUE4/Content/Carla/Maps/OpenDrive/empty.xodr
 COPY ./resources/spawn_custom_track.launch /home/noetic/etdv_simulator_ws/src/etdv_simulator/launch/
 COPY ./resources/spawn_custom_vehicle.launch /home/noetic/etdv_simulator_ws/src/etdv_simulator/launch
+COPY ./resources/test.yaml /home/noetic/etdv_simulator_ws/src/etdv_simulator/resources/
 
 CMD ["/bin/bash", "-ic", "$HOME/run_system.sh && tail -f /dev/null"]
