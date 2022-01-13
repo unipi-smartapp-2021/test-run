@@ -43,9 +43,7 @@ function spawn_planning () {
   sleep 10
   rosrun planning Main_LTP.py > /dev/null &
   sleep 10
-  rosrun execution kinematics_broker.py > /dev/null &
-  sleep 2
-  rosrun execution dispatcher.py &
+  roslaunch --screen execution execution.launch plot_pids:=true &
 }
 
 function spawn_track () {
