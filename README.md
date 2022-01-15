@@ -12,8 +12,10 @@ as a docker container, please refer to the aforementioned docummentation for set
 carefully follow Section [`Some dependencies`](https://github.com/unipi-smartapp-2021/ETEAM-MIRROR-etdv_simulator/tree/dockerized-install#some-dependencies) and have the `Nvidia container toolkit` installed on your system.
 
 
-## Hardware Requirements
+## System Requirements
 As of now, the current system architecture has strict hardware requirements: to work, an Nvidia graphics card must be available with the latest drivers installed and it must have `CUDA` compatibility with at least version `11.3`. Make sure you have the CUDA runtime installed on your host machine and that it matches (at least) the version indicated above.
+
+Having at least 12GB of RAM is recommended, although you can circumvent the lack of system memory by having a large swap file, provided it is installed on a fast drive.
 
 ## Installation
 If you haven't, please clone the repository with:
